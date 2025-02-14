@@ -4,16 +4,19 @@ using UnityEngine.InputSystem;
 
 public class CharaMove : MonoBehaviour
 {
-    private const string KEY_MOVE_ACTION = "KeyMove";
-    private const string POINTER_MOVE_ACTION = "PointerMove";
+    private const string KEY_MOVE_ACTION = "KeyMove"; // キーボード入力のアクション名
+    private const string POINTER_MOVE_ACTION = "PointerMove"; // タップ入力のアクション名
     private InputSystem_Actions inputActions;
     private float screenCenter;
     private bool isSideMoving = false;
 
+    [Header("横移動にかける時間")]
     [SerializeField]
     private float sideDuration = 1.0f;
+    [Header("レーン間の距離")]
     [SerializeField]
     private float lanesDistance = 2.0f;
+    [Header("前進の速度")]
     [SerializeField]
     private float forwardSpeed = 5.0f;
 
@@ -93,7 +96,11 @@ public class CharaMove : MonoBehaviour
         while (elapsedTime < sideDuration)
         {
             elapsedTime += Time.deltaTime;
-            transform.position = Vector3.Lerp(startPos, endPos, elapsedTime / sideDuration);
+            float t = elapsedTime / sideDuration;
+            float newXPos = Mathf.Lerp(startPos.x, endPos.x, t);
+
+            transform.position = new Vector3(newXPos, transform.position.y, transform.position.z); ;
+
             yield return null;
         }
 
