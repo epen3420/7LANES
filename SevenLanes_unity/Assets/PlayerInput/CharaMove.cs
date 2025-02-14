@@ -6,13 +6,11 @@ public class CharaMove : MonoBehaviour
 {
     private const string KEY_MOVE_ACTION = "KeyMove"; // キーボード入力のアクション名
     private const string POINTER_MOVE_ACTION = "PointerMove"; // タップ入力のアクション名
+    private const float SIDE_MOVE_DURATION = 0.06f;
     private InputSystem_Actions inputActions;
     private float screenCenter;
     private bool isSideMoving = false;
 
-    [Header("横移動にかける時間")]
-    [SerializeField]
-    private float sideDuration = 1.0f;
     [Header("レーン間の距離")]
     [SerializeField]
     private float lanesDistance = 2.0f;
@@ -93,13 +91,15 @@ public class CharaMove : MonoBehaviour
         float elapsedTime = 0.0f;
         Vector3 startPos = transform.position;
         Vector3 endPos = new Vector3(startPos.x + direction * lanesDistance, startPos.y, startPos.z);
-        while (elapsedTime < sideDuration)
+        while (elapsedTime < SIDE_MOVE_DURATION)
         {
             elapsedTime += Time.deltaTime;
-            float t = elapsedTime / sideDuration;
-            float newXPos = Mathf.Lerp(startPos.x, endPos.x, t);
+            float t = elapsedTime / SIDE_MOVE_DURATION;
 
-            transform.position = new Vector3(newXPos, transform.position.y, transform.position.z); ;
+            Vector3 currentPos = transform.position;
+            currentPos.x = Mathf.Lerp(startPos.x, endPos.x, t);
+
+            transform.position = currentPos;
 
             yield return null;
         }
