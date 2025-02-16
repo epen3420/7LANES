@@ -6,8 +6,14 @@ using UnityEngine.UI;
 
 public class ItemCollector : MonoBehaviour
 {
-    private int[] collectedItems = new int[7]; // 7種類のアイテム、それぞれ最大4つまで
-    public Text EssenceCountText;
+    public int MAX_Essence=4;
+    public int MAX_RainbowArrow=3;
+
+
+
+    private int[] collectedEssence = new int[7]; // 7種類のアイテム、それぞれ最大4つまで
+    private int RainbowArrowCount=0;//虹の矢を数える
+    public Text EssenceCountText;//取得したエッセンスの色と個数を確認するためのテキスト
 
 
     void Update()
@@ -19,8 +25,10 @@ public class ItemCollector : MonoBehaviour
         緑エッセンスの数 {3} 個
         水色エッセンスの数 {4} 個
         青エッセンスの数 {5} 個
-        紫エッセンスの数 {6} 個"
-        ,collectedItems[0],collectedItems[1],collectedItems[2],collectedItems[3],collectedItems[4],collectedItems[5],collectedItems[6]);
+        紫エッセンスの数 {6} 個
+        
+        虹の矢の数{7}個"
+        ,collectedEssence[0],collectedEssence[1],collectedEssence[2],collectedEssence[3],collectedEssence[4],collectedEssence[5],collectedEssence[6],RainbowArrowCount);
 
         
     }
@@ -40,10 +48,10 @@ public class ItemCollector : MonoBehaviour
 
     private void CollectItem(int itemIndex)
     {
-        if (collectedItems[itemIndex] < 4)
+        if (collectedEssence[itemIndex] < MAX_Essence)
         {
-            collectedItems[itemIndex]++;
-            Debug.Log($"アイテム{itemIndex}を取得。現在の個数: {collectedItems[itemIndex]}");
+            collectedEssence[itemIndex]++;
+            Debug.Log($"アイテム{itemIndex}を取得。現在の個数: {collectedEssence[itemIndex]}");
         }
         else
         {
@@ -51,7 +59,7 @@ public class ItemCollector : MonoBehaviour
         }
 
         // 各アイテムを最低1つ以上持っているかチェック
-        if (collectedItems.All(count => count > 0))
+        if (collectedEssence.All(count => count > 0)&&RainbowArrowCount<MAX_RainbowArrow)
         {
             TransformItems();
         }
@@ -59,6 +67,8 @@ public class ItemCollector : MonoBehaviour
 
     private void TransformItems()
     {
+        RainbowArrowCount++;
+        for (int i = 0; i < 7; i++)collectedEssence[i]--;  
         Debug.Log("すべてのアイテムを最低1つずつ集めたので、新しいアイテムに変化！");
         // ここで新しいアイテムに変化する処理を書く
     }
