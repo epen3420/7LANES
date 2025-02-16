@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemCollector : MonoBehaviour
+public class EssenceGetScript: MonoBehaviour
 {
     public int MAX_Essence=4;
     public int MAX_RainbowArrow=3;
