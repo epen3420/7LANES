@@ -2,10 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemCollector : MonoBehaviour
 {
     private int[] collectedItems = new int[7]; // 7種類のアイテム、それぞれ最大4つまで
+    public Text EssenceCountText;
+
+
+    void Update()
+    {
+        EssenceCountText.text = string.Format(@"
+        赤いエッセンスの数 {0} 個
+        オレンジエッセンスの数 {1} 個
+        黄色いエッセンスの数 {2} 個
+        緑エッセンスの数 {3} 個
+        水色エッセンスの数 {4} 個
+        青エッセンスの数 {5} 個
+        紫エッセンスの数 {6} 個"
+        ,collectedItems[0],collectedItems[1],collectedItems[2],collectedItems[3],collectedItems[4],collectedItems[5],collectedItems[6]);
+
+        
+    }
 
     private void OnTriggerEnter(Collider other)
     {
