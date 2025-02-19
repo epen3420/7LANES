@@ -8,7 +8,8 @@ public class EssenceGetScript : MonoBehaviour
 {
     public int MAX_Essence = 4;
     public int MAX_RainbowArrow = 3;
-
+    private bool canExpandLane = false;
+    public bool CanExpandLane { set { canExpandLane = value; } }
 
 
     private int[] collectedEssence = new int[7]; // 7種類のアイテム、それぞれ最大4つまで
@@ -71,5 +72,20 @@ public class EssenceGetScript : MonoBehaviour
         for (int i = 0; i < 7; i++) collectedEssence[i]--;
         Debug.Log("すべてのアイテムを最低1つずつ集めたので、新しいアイテムに変化！");
         // ここで新しいアイテムに変化する処理を書く
+    }
+
+    public void ReleaseRainbowArrow()
+    {
+        if (RainbowArrowCount > 0)
+        {
+            RainbowArrowCount--;
+            Debug.Log($"現在の虹の矢の数は{RainbowArrowCount}");
+
+            if (canExpandLane)
+            {
+                LaneCreator.instance.ExpandLane();
+                canExpandLane = false;
+            }
+        }
     }
 }
