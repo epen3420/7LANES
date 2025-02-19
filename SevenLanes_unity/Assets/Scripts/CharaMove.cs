@@ -44,8 +44,9 @@ public class CharaMove : MonoBehaviour
 
     private void Update()
     {
+        float currentFlameDistance = forwardSpeed * Time.deltaTime;
         // 前に移動
-        transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward * currentFlameDistance);
     }
 
     /// <summary>
