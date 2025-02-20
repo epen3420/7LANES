@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "DrawBow",
+                    "type": "Button",
+                    "id": "da94ade2-c968-4613-a00f-929ce9bfa379",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -123,6 +132,17 @@
                     "action": "PointerMove",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "2606af90-7079-4583-8283-b2adb22d2af8",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DrawBow",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

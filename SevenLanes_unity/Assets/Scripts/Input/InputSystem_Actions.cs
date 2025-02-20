@@ -44,6 +44,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DrawBow"",
+                    ""type"": ""Button"",
+                    ""id"": ""da94ade2-c968-4613-a00f-929ce9bfa379"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -145,6 +154,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""PointerMove"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2606af90-7079-4583-8283-b2adb22d2af8"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DrawBow"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -732,6 +752,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_KeyMove = m_Player.FindAction("KeyMove", throwIfNotFound: true);
         m_Player_PointerMove = m_Player.FindAction("PointerMove", throwIfNotFound: true);
+        m_Player_DrawBow = m_Player.FindAction("DrawBow", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -813,12 +834,14 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_KeyMove;
     private readonly InputAction m_Player_PointerMove;
+    private readonly InputAction m_Player_DrawBow;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
         public PlayerActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
         public InputAction @KeyMove => m_Wrapper.m_Player_KeyMove;
         public InputAction @PointerMove => m_Wrapper.m_Player_PointerMove;
+        public InputAction @DrawBow => m_Wrapper.m_Player_DrawBow;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -834,6 +857,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @PointerMove.started += instance.OnPointerMove;
             @PointerMove.performed += instance.OnPointerMove;
             @PointerMove.canceled += instance.OnPointerMove;
+            @DrawBow.started += instance.OnDrawBow;
+            @DrawBow.performed += instance.OnDrawBow;
+            @DrawBow.canceled += instance.OnDrawBow;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -844,6 +870,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @PointerMove.started -= instance.OnPointerMove;
             @PointerMove.performed -= instance.OnPointerMove;
             @PointerMove.canceled -= instance.OnPointerMove;
+            @DrawBow.started -= instance.OnDrawBow;
+            @DrawBow.performed -= instance.OnDrawBow;
+            @DrawBow.canceled -= instance.OnDrawBow;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1028,6 +1057,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     {
         void OnKeyMove(InputAction.CallbackContext context);
         void OnPointerMove(InputAction.CallbackContext context);
+        void OnDrawBow(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
