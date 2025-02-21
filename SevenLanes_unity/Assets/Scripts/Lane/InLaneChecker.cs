@@ -6,4 +6,9 @@ public class InLaneChecker : MonoBehaviour
     {
         other.GetComponent<EssenceGetScript>().CanExpandLane = true;
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        other.GetComponent<EssenceGetScript>().CanExpandLane = false;
+    }
 }
