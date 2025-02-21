@@ -53,6 +53,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""KeyCreateLane"",
+                    ""type"": ""Button"",
+                    ""id"": ""cdf2a1fc-ffb3-432f-84d1-e78fcc264381"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -163,6 +172,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""DrawBow"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""83e7517e-5b01-40d2-8751-90a88336b6e0"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KeyCreateLane"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""617130a3-a39f-40ea-8741-b4e7fca17b80"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KeyCreateLane"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -753,6 +784,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_KeyMove = m_Player.FindAction("KeyMove", throwIfNotFound: true);
         m_Player_PointerMove = m_Player.FindAction("PointerMove", throwIfNotFound: true);
         m_Player_DrawBow = m_Player.FindAction("DrawBow", throwIfNotFound: true);
+        m_Player_KeyCreateLane = m_Player.FindAction("KeyCreateLane", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -835,6 +867,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_KeyMove;
     private readonly InputAction m_Player_PointerMove;
     private readonly InputAction m_Player_DrawBow;
+    private readonly InputAction m_Player_KeyCreateLane;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -842,6 +875,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @KeyMove => m_Wrapper.m_Player_KeyMove;
         public InputAction @PointerMove => m_Wrapper.m_Player_PointerMove;
         public InputAction @DrawBow => m_Wrapper.m_Player_DrawBow;
+        public InputAction @KeyCreateLane => m_Wrapper.m_Player_KeyCreateLane;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -860,6 +894,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @DrawBow.started += instance.OnDrawBow;
             @DrawBow.performed += instance.OnDrawBow;
             @DrawBow.canceled += instance.OnDrawBow;
+            @KeyCreateLane.started += instance.OnKeyCreateLane;
+            @KeyCreateLane.performed += instance.OnKeyCreateLane;
+            @KeyCreateLane.canceled += instance.OnKeyCreateLane;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -873,6 +910,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @DrawBow.started -= instance.OnDrawBow;
             @DrawBow.performed -= instance.OnDrawBow;
             @DrawBow.canceled -= instance.OnDrawBow;
+            @KeyCreateLane.started -= instance.OnKeyCreateLane;
+            @KeyCreateLane.performed -= instance.OnKeyCreateLane;
+            @KeyCreateLane.canceled -= instance.OnKeyCreateLane;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1058,6 +1098,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnKeyMove(InputAction.CallbackContext context);
         void OnPointerMove(InputAction.CallbackContext context);
         void OnDrawBow(InputAction.CallbackContext context);
+        void OnKeyCreateLane(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
