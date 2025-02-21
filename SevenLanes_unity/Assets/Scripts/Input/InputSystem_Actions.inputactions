@@ -24,6 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
+
                     "name": "DrawBow",
                     "type": "Button",
                     "id": "da94ade2-c968-4613-a00f-929ce9bfa379",
@@ -36,6 +37,7 @@
                     "name": "KeyCreateLane",
                     "type": "Button",
                     "id": "cdf2a1fc-ffb3-432f-84d1-e78fcc264381",
+
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -144,6 +146,7 @@
                 },
                 {
                     "name": "",
+
                     "id": "2606af90-7079-4583-8283-b2adb22d2af8",
                     "path": "<Keyboard>/s",
                     "interactions": "",
@@ -156,6 +159,7 @@
                 {
                     "name": "",
                     "id": "83e7517e-5b01-40d2-8751-90a88336b6e0",
+
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
@@ -166,7 +170,9 @@
                 },
                 {
                     "name": "",
+
                     "id": "617130a3-a39f-40ea-8741-b4e7fca17b80",
+
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",

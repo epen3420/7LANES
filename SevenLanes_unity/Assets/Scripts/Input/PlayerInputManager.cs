@@ -6,6 +6,7 @@ public class PlayerInputManager : MonoBehaviour
     private const string KEY_MOVE_ACTION = "KeyMove"; // キーボード入力のアクション名
     private const string POINTER_MOVE_ACTION = "PointerMove"; // タップ入力のアクション名
     private IPlayerMovable iPlayerMovable;
+    private EssenceGetScript essenceGetScript;
     private InputSystem_Actions inputActions;
     private float screenCenter;
 
@@ -14,6 +15,7 @@ public class PlayerInputManager : MonoBehaviour
     {
         inputActions = new InputSystem_Actions();
         iPlayerMovable = GetComponent<IPlayerMovable>();
+        essenceGetScript = GetComponent<EssenceGetScript>();
 
         screenCenter = Screen.width / 2;
     }
@@ -24,12 +26,14 @@ public class PlayerInputManager : MonoBehaviour
 
         inputActions.Player.KeyMove.performed += MoveSide;
         inputActions.Player.PointerMove.performed += MoveSide;
+        inputActions.Player.KeyCreateLane.canceled += ShootRainbowArrow;
     }
 
     private void OnDisable()
     {
         inputActions.Player.KeyMove.performed -= MoveSide;
         inputActions.Player.PointerMove.performed -= MoveSide;
+        inputActions.Player.KeyCreateLane.canceled -= ShootRainbowArrow;
 
         inputActions.Disable();
     }
@@ -62,5 +66,10 @@ public class PlayerInputManager : MonoBehaviour
     private int PointerPos(float pos)
     {
         return (int)Mathf.Sign(pos - screenCenter);
+    }
+
+    private void ShootRainbowArrow(InputAction.CallbackContext context)
+    {
+        essenceGetScript.ReleaseRainbowArrow();
     }
 }
