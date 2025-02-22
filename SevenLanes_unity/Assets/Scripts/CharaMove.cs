@@ -14,11 +14,27 @@ public class CharaMove : MonoBehaviour, IPlayerMovable
     private float forwardSpeed = 5.0f;
 
 
+    private void Start()
+    {
+        // カメラの方向を向く
+        transform.LookAt(Camera.main.transform.position);
+    }
+
     private void Update()
     {
         float currentFlameDistance = forwardSpeed * Time.deltaTime;
-        // 前に移動
-        transform.Translate(Vector3.forward * currentFlameDistance);
+        MoveForward(currentFlameDistance);
+    }
+
+    /// <summary>
+    /// distance分前進する
+    /// </summary>
+    /// <param name="distance"></param>
+    private void MoveForward(float distance)
+    {
+        Vector3 currentPos = transform.position;
+        currentPos.z += distance;
+        transform.position = currentPos;
     }
 
     /// <summary>
