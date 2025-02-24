@@ -592,7 +592,6 @@ GameObject:
   - component: {fileID: 697950453}
   - component: {fileID: 697950452}
   - component: {fileID: 697950454}
-  - component: {fileID: 697950455}
   m_Layer: 0
   m_Name: anime1
   m_TagString: Untagged
@@ -702,18 +701,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63f18e25ae784754087325f90f7705b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &697950455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 697950450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3174d6f5dc5429945bb1763b0936449e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &750973129
