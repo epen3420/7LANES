@@ -14,25 +14,12 @@ public class EssenceGetScript : MonoBehaviour
 
     private int[] collectedEssence = new int[7]; // 7種類のアイテム、それぞれ最大4つまで
     private int RainbowArrowCount = 0;//虹の矢を数える
-    public Text EssenceCountText;//取得したエッセンスの色と個数を確認するためのテキスト
 
+    [SerializeField]
+    private TestTubeManager testTubeManager;
+    [SerializeField]
+    private RainbowArrowUIManager rainbowArrowUIManager;
 
-    /* void Update()
-    {
-        EssenceCountText.text = string.Format(@"
-        赤いエッセンスの数 {0} 個
-        オレンジエッセンスの数 {1} 個
-        黄色いエッセンスの数 {2} 個
-        緑エッセンスの数 {3} 個
-        水色エッセンスの数 {4} 個
-        青エッセンスの数 {5} 個
-        紫エッセンスの数 {6} 個
-
-        虹の矢の数{7}個"
-        ,collectedEssence[0],collectedEssence[1],collectedEssence[2],collectedEssence[3],collectedEssence[4],collectedEssence[5],collectedEssence[6],RainbowArrowCount);
-
-
-    } */
 
     private void OnTriggerEnter(Collider other)
     {
@@ -52,6 +39,7 @@ public class EssenceGetScript : MonoBehaviour
         if (collectedEssence[itemIndex] < MAX_Essence)
         {
             collectedEssence[itemIndex]++;
+            testTubeManager.AddEssenceToTestTube(itemIndex);
             Debug.Log($"アイテム{itemIndex}を取得。現在の個数: {collectedEssence[itemIndex]}");
         }
         else
@@ -69,7 +57,13 @@ public class EssenceGetScript : MonoBehaviour
     private void TransformItems()
     {
         RainbowArrowCount++;
-        for (int i = 0; i < 7; i++) collectedEssence[i]--;
+        rainbowArrowUIManager.ShowRainbowArrow();
+        for (int i = 0; i < 7; i++)
+        {
+            collectedEssence[i]--;
+            testTubeManager.RemoveEssenceFromTestTube(i);
+        }
+        ;
         Debug.Log("すべてのアイテムを最低1つずつ集めたので、新しいアイテムに変化！");
         // ここで新しいアイテムに変化する処理を書く
     }
@@ -79,6 +73,7 @@ public class EssenceGetScript : MonoBehaviour
         if (RainbowArrowCount > 0)
         {
             RainbowArrowCount--;
+            rainbowArrowUIManager.HideRainbowArrow();
             Debug.Log($"現在の虹の矢の数は{RainbowArrowCount}");
 
             if (canExpandLane)
