@@ -8,7 +8,6 @@ public class TransParentImage
     {
         while (img.color.a > 0)
         {
-            Debug.Log("b");
             img.color = new Color(img.color.r, img.color.g, img.color.b, img.color.a - 0.1f);
             yield return new WaitForSeconds(0.1f);
         }

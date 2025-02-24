@@ -4,14 +4,17 @@ public class InLaneChecker : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<EssenceGetScript>().CanExpandLane = true;
+        other.GetComponent<EssenceGetScript>().canExpandLane = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        other.GetComponent<EssenceGetScript>().CanExpandLane = false;
+        if (!other.GetComponent<EssenceGetScript>().canExpandLane)
+        {
+            return;
+        }
 
-        StartCoroutine(other.GetComponent<GameOverPlayer>().GameOver());
-        transform.root.GetComponent<SpriteRenderer>().sortingLayerName = "Lane";
+        var gameOverPlayer = other.GetComponent<GameOverPlayer>();
+        StartCoroutine(gameOverPlayer.GameOver(transform.root.GetComponent<SpriteRenderer>()));
     }
 }

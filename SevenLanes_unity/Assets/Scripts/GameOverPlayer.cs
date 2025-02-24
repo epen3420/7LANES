@@ -5,8 +5,6 @@ using UnityEngine.UI;
 public class GameOverPlayer : MonoBehaviour
 {
     [SerializeField]
-    private Image[] uiImage;
-    [SerializeField]
     private CharaMove charaMove;
     [SerializeField]
     private RainbowArrowUIManager rainbowArrowUIManager;
@@ -14,7 +12,7 @@ public class GameOverPlayer : MonoBehaviour
     private TestTubeManager testTubeManager;
 
 
-    public IEnumerator GameOver()
+    public IEnumerator GameOver(SpriteRenderer laneSpriteRenderer)
     {
         GetComponent<PlayerInputManager>().enabled = false;
         yield return new WaitForSeconds(1.0f);
@@ -24,9 +22,11 @@ public class GameOverPlayer : MonoBehaviour
 
         var animator = GetComponent<Animator>();
         animator.enabled = false;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
         animator.enabled = true;
         animator.SetBool("IsGameOver", true);
+        yield return new WaitForSeconds(1.0f);
+        laneSpriteRenderer.sortingLayerName = "Lane";
         charaMove.FallDown();
     }
 

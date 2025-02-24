@@ -1565,7 +1565,7 @@ GameObject:
   - component: {fileID: 857526206}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1715,6 +1715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MAX_Essence: 4
   MAX_RainbowArrow: 3
+  canExpandLane: 0
   testTubeManager: {fileID: 1086260451}
   rainbowArrowUIManager: {fileID: 726329766}
 --- !u!54 &857526204
@@ -1779,8 +1780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8057bc9001e66c44191b63bc29656bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiImage:
-  - {fileID: 0}
   charaMove: {fileID: 857526199}
   rainbowArrowUIManager: {fileID: 726329766}
   testTubeManager: {fileID: 1086260451}
