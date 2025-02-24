@@ -10,5 +10,8 @@ public class InLaneChecker : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         other.GetComponent<EssenceGetScript>().CanExpandLane = false;
+
+        StartCoroutine(other.GetComponent<GameOverPlayer>().GameOver());
+        transform.root.GetComponent<SpriteRenderer>().sortingLayerName = "Lane";
     }
 }
