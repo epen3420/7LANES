@@ -17,6 +17,8 @@ public class EssenceGetScript : MonoBehaviour
 
     [SerializeField]
     private TestTubeManager testTubeManager;
+    [SerializeField]
+    private RainbowArrowUIManager rainbowArrowUIManager;
 
 
     private void OnTriggerEnter(Collider other)
@@ -55,6 +57,7 @@ public class EssenceGetScript : MonoBehaviour
     private void TransformItems()
     {
         RainbowArrowCount++;
+        rainbowArrowUIManager.ShowRainbowArrow();
         for (int i = 0; i < 7; i++)
         {
             collectedEssence[i]--;
@@ -70,6 +73,7 @@ public class EssenceGetScript : MonoBehaviour
         if (RainbowArrowCount > 0)
         {
             RainbowArrowCount--;
+            rainbowArrowUIManager.HideRainbowArrow();
             Debug.Log($"現在の虹の矢の数は{RainbowArrowCount}");
 
             if (canExpandLane)
