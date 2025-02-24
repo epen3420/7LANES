@@ -6,6 +6,9 @@ public class PlayerAnimationScript : MonoBehaviour
     private Animator anim;
     private InputSystem_Actions controls; // Input Systemのカスタムアクション
 
+    private int frameCounter = 0;   //周期内における現在のフレーム
+    private int totalFrames = 24;  // モーションの一周期のフレーム数
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -15,6 +18,11 @@ public class PlayerAnimationScript : MonoBehaviour
         controls.Player.DrawBow.performed += ctx => StartDrawing();
         // Sキーが離されたときに弓を戻す
         controls.Player.DrawBow.canceled += ctx => StopDrawing();
+    }
+        private void Update()
+    {
+        // 毎フレームカウントを進める
+        frameCounter = (frameCounter + 1) % totalFrames;
     }
 
     private void OnEnable()
@@ -29,11 +37,19 @@ public class PlayerAnimationScript : MonoBehaviour
 
     private void StartDrawing()
     {
-        anim.SetBool("isDrawingBow", true);
+        float normalizedTime = (float)frameCounter / (float)totalFrames;
+        
+        // 直前のアニメーションの位置を保持してスムーズな遷移を行う
+        anim.CrossFade("player_DrawaBow", 0.05f, 0, normalizedTime);
     }
 
     private void StopDrawing()
     {
-        anim.SetBool("isDrawingBow", false);
+        float normalizedTime = (float)frameCounter / (float)totalFrames;
+        
+        // 滑らかにアニメーションを切り替え
+        anim.CrossFade("player_ShootArrow", 0.05f, 0, normalizedTime);
+
+        
     }
 }
