@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TestTubeManager : MonoBehaviour
 {
@@ -13,5 +14,15 @@ public class TestTubeManager : MonoBehaviour
     public void RemoveEssenceFromTestTube(int essenceIndex)
     {
         inksManager[essenceIndex].RemoveInkFromTestTube();
+    }
+
+    public void TransparentTestTube()
+    {
+        foreach (var ink in inksManager)
+        {
+            ink.TransparentInk();
+        }
+        var transparentImage = new TransParentImage();
+        StartCoroutine(transparentImage.HideImage(GetComponent<Image>()));
     }
 }

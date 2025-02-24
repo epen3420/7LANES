@@ -8,8 +8,7 @@ public class EssenceGetScript : MonoBehaviour
 {
     public int MAX_Essence = 4;
     public int MAX_RainbowArrow = 3;
-    private bool canExpandLane = false;
-    public bool CanExpandLane { set { canExpandLane = value; } }
+    public bool canExpandLane = false;
 
 
     private int[] collectedEssence = new int[7]; // 7種類のアイテム、それぞれ最大4つまで

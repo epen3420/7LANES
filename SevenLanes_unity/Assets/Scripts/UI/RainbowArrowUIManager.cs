@@ -27,4 +27,12 @@ public class RainbowArrowUIManager : MonoBehaviour
         arrowIndex--;
         arrows[arrowIndex].SwitchArrow();
     }
+
+    public void TransparentRainbowArrow()
+    {
+        foreach (var arrow in arrows)
+        {
+            arrow.TransparentArrow();
+        }
+    }
 }

@@ -65,4 +65,15 @@ public class CharaMove : MonoBehaviour, IPlayerMovable
 
         isSideMoving = false;
     }
+
+    public void StopChara()
+    {
+        forwardSpeed = 0;
+    }
+
+    public void FallDown()
+    {
+        Camera.main.gameObject.GetComponent<CameraController>().enabled = false;
+        GetComponent<Rigidbody>().useGravity = true;
+    }
 }
