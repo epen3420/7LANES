@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 78802803}
   - component: {fileID: 78802802}
   - component: {fileID: 78802801}
-  - component: {fileID: 78802808}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -155,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MAX_Essence: 4
   MAX_RainbowArrow: 3
+  canExpandLane: 0
   testTubeManager: {fileID: 0}
   rainbowArrowUIManager: {fileID: 0}
 --- !u!54 &78802802
@@ -275,22 +275,6 @@ Transform:
   - {fileID: 697950451}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &78802808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 78802800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d26262af6eff23f42875aa6d31b1ed18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MAX_Essence: 4
-  MAX_RainbowArrow: 3
-  testTubeManager: {fileID: 0}
-  rainbowArrowUIManager: {fileID: 0}
 --- !u!1 &95799035
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +576,8 @@ GameObject:
   - component: {fileID: 697950453}
   - component: {fileID: 697950452}
   - component: {fileID: 697950454}
+  - component: {fileID: 697950456}
+  - component: {fileID: 697950455}
   m_Layer: 0
   m_Name: anime1
   m_TagString: Untagged
@@ -700,7 +686,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 697950450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63f18e25ae784754087325f90f7705b2, type: 3}
+  m_Script: {fileID: 11500000, guid: fd4404c149f02df4f966a94007f93b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrows: []
+--- !u!114 &697950455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697950450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec1a04b48551e341b0602f54eeb6c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &697950456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697950450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec1a04b48551e341b0602f54eeb6c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &750973129
