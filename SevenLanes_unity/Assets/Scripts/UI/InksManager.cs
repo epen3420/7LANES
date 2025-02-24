@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InksManager : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class InksManager : MonoBehaviour
 
     [SerializeField]
     private GameObject[] inksInTestTube;
+    [SerializeField]
+    private Image testTube;
 
 
     private void Start()
@@ -32,5 +35,15 @@ public class InksManager : MonoBehaviour
             inkIndex--;
             inksInTestTube[inkIndex].SetActive(false);
         }
+    }
+
+    public void TransparentInk()
+    {
+        var transparentImage = new TransParentImage();
+        foreach (var ink in inksInTestTube)
+        {
+            StartCoroutine(transparentImage.HideImage(ink.GetComponent<Image>()));
+        }
+        StartCoroutine(transparentImage.HideImage(testTube));
     }
 }

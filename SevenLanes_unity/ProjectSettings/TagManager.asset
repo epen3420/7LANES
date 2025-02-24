@@ -48,6 +48,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Lane
+    uniqueID: 3221249807
+    locked: 0
   m_RenderingLayers:
   - Default
   - Light Layer 1

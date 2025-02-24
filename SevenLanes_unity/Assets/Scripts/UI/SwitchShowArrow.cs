@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SwitchShowArrow : MonoBehaviour
 {
@@ -18,5 +19,19 @@ public class SwitchShowArrow : MonoBehaviour
     {
         showArrow.SetActive(!showArrow.activeSelf);
         hideArrow.SetActive(!hideArrow.activeSelf);
+    }
+
+    public void TransparentArrow()
+    {
+        var images = new Image[]
+        {
+            showArrow.GetComponent<Image>(),
+            hideArrow.GetComponent<Image>()
+        };
+        var transParentImage = new TransParentImage();
+        foreach (var image in images)
+        {
+            StartCoroutine(transParentImage.HideImage(image));
+        }
     }
 }
