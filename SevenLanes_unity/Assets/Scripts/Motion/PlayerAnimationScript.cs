@@ -29,11 +29,14 @@ public class PlayerAnimationScript : MonoBehaviour
 
     private void StartDrawing()
     {
+        anim.SetBool("isShootingArrow", false);
         anim.SetBool("isDrawingBow", true);
     }
 
     private void StopDrawing()
     {
+        anim.SetBool("isShootingArrow", true);
         anim.SetBool("isDrawingBow", false);
+        
     }
 }

@@ -155,7 +155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MAX_Essence: 4
   MAX_RainbowArrow: 3
-  EssenceCountText: {fileID: 691180577}
+  testTubeManager: {fileID: 0}
+  rainbowArrowUIManager: {fileID: 0}
 --- !u!54 &78802802
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -288,7 +289,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MAX_Essence: 4
   MAX_RainbowArrow: 3
-  EssenceCountText: {fileID: 691180577}
+  testTubeManager: {fileID: 0}
+  rainbowArrowUIManager: {fileID: 0}
 --- !u!1 &95799035
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &95799036
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -590,6 +592,7 @@ GameObject:
   - component: {fileID: 697950453}
   - component: {fileID: 697950452}
   - component: {fileID: 697950454}
+  - component: {fileID: 697950455}
   m_Layer: 0
   m_Name: anime1
   m_TagString: Untagged
@@ -606,8 +609,8 @@ Transform:
   m_GameObject: {fileID: 697950450}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0000000021287, y: 1.06, z: 0}
-  m_LocalScale: {x: 0.021245424, y: 0.47418287, z: 2.0141115}
+  m_LocalPosition: {x: 0.0000000021286, y: 1.06, z: 0}
+  m_LocalScale: {x: 0.0989888, y: 2.2093601, z: 9.38435}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 78802806}
@@ -699,6 +702,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63f18e25ae784754087325f90f7705b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &697950455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697950450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3174d6f5dc5429945bb1763b0936449e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &750973129
