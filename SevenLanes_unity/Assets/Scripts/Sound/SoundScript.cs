@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EssenceGetSoundScript : MonoBehaviour
+public class SoundScript : MonoBehaviour
 {
-    public AudioClip[] GetSound;
+    public AudioClip[] GetSound;//エッセンス取得時のSE
+    public AudioClip ShootingSound;//矢を放つときのSE　矢が飛ぶSEではない
     AudioSource audioSource;
     void Awake()
     {
@@ -13,5 +14,10 @@ public class EssenceGetSoundScript : MonoBehaviour
     public void EssenceGetSE(int index)
     {
         audioSource.PlayOneShot(GetSound[index]);
+    }
+
+    public void ShootingArrowSE()
+    {
+        audioSource.PlayOneShot(ShootingSound);
     }
 }

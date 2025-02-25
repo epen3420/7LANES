@@ -7,14 +7,16 @@ public class PlayerAnimationScript : MonoBehaviour
     private InputSystem_Actions controls; // Input Systemのカスタムアクション
     private GameObject playerObject;
     private EssenceGetScript essenceGetScript;
+    private SoundScript soundScript;
     private int frameCounter = 0;   //周期内における現在のフレーム
     private int totalFrames = 24;  // モーションの一周期のフレーム数
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        soundScript = GetComponent<SoundScript>();
         controls = new InputSystem_Actions(); // Input Systemのアクションマップを作成
-        playerObject =GameObject.Find("Player");
+        playerObject = GameObject.Find("Player");
 
         essenceGetScript = playerObject.GetComponent<EssenceGetScript>();
 
@@ -23,7 +25,7 @@ public class PlayerAnimationScript : MonoBehaviour
         // Sキーが離されたときに弓を戻す
         controls.Player.DrawBow.canceled += ctx => StopDrawing();
     }
-        private void Update()
+    private void Update()
     {
         // 毎フレームカウントを進める
         frameCounter = (frameCounter + 1) % totalFrames;
@@ -40,12 +42,12 @@ public class PlayerAnimationScript : MonoBehaviour
     }
 
     private void StartDrawing()
-    {        
+    {
         float normalizedTime = (float)frameCounter / (float)totalFrames;
-        if(essenceGetScript.RainbowArrowCount>0)
+        if (essenceGetScript.RainbowArrowCount > 0)
         {
-        // 直前のアニメーションの位置を保持してスムーズな遷移を行う
-        anim.CrossFade("player_DrawaBow", 0.05f, 0, normalizedTime);
+            // 直前のアニメーションの位置を保持してスムーズな遷移を行う
+            anim.CrossFade("player_DrawaBow", 0.05f, 0, normalizedTime);
         }
 
     }
@@ -53,11 +55,12 @@ public class PlayerAnimationScript : MonoBehaviour
     private void StopDrawing()
     {
         float normalizedTime = (float)frameCounter / (float)totalFrames;
-                if(essenceGetScript.RainbowArrowCount>0)
+        if (essenceGetScript.RainbowArrowCount > 0)
         {
-        // 滑らかにアニメーションを切り替え
-        anim.CrossFade("player_ShootArrow", 0.05f, 0, normalizedTime);
+            soundScript.ShootingArrowSE();//矢を放つ音を再生する
+            // 滑らかにアニメーションを切り替え
+            anim.CrossFade("player_ShootArrow", 0.05f, 0, normalizedTime);
         }
-        
+
     }
 }

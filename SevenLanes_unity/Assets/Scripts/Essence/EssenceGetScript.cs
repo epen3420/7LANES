@@ -10,7 +10,7 @@ public class EssenceGetScript : MonoBehaviour
     public int MAX_RainbowArrow = 3;
     public bool canExpandLane = false;
 
-    private EssenceGetSoundScript essenceGetSoundScript;
+    private SoundScript soundScript;
 
 
     private int[] collectedEssence = new int[7]; // 7種類のアイテム、それぞれ最大4つまで
@@ -23,7 +23,7 @@ public class EssenceGetScript : MonoBehaviour
     private RainbowArrowUIManager rainbowArrowUIManager;
 
     private void Awake(){
-        essenceGetSoundScript = GetComponent<EssenceGetSoundScript>();
+        soundScript = GetComponent<SoundScript>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,7 +39,7 @@ public class EssenceGetScript : MonoBehaviour
             if (other.CompareTag($"Essence{i}")) // タグでアイテムを識別
             {
                 CollectItem(i);
-                essenceGetSoundScript.EssenceGetSE(i);
+                soundScript.EssenceGetSE(i);
                 Destroy(other.gameObject); // アイテムを取得後、消す
                 break;
             }
