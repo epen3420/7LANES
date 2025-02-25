@@ -5,43 +5,36 @@ using UnityEngine.UI;
 
 public class SceneTransitionManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject loadObj;
-    [SerializeField]
-    private Image loadBackground;
-    [SerializeField]
-    private float fadeDuration = 1.5f;
-
+    [SerializeField] private GameObject loadObj; // ロード画面全体 (黒背景を含む)
+    [SerializeField] private Image loadBackground; // 黒い背景用のImage
+    [SerializeField] private float fadeDuration = 1.5f;
 
     public void LoadScreen(string sceneName)
     {
-        loadObj.SetActive(true);
+        loadObj.SetActive(true); // 黒い画面を表示
         StartCoroutine(LoadNextScene(sceneName));
     }
 
     private IEnumerator LoadNextScene(string sceneName)
     {
-        yield return FadeOut();
+        yield return StartCoroutine(FadeOut());
 
+        // シーンを非アクティブのままロードする
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-        asyncLoad.allowSceneActivation = false;
 
+        // シーン遷移が終わるまでロード画面を保持
         while (!asyncLoad.isDone)
         {
-            if (asyncLoad.progress >= 0.9f)
-            {
-                asyncLoad.allowSceneActivation = true;
-            }
             yield return null;
         }
     }
 
     private IEnumerator FadeOut()
     {
-        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
+        for (float t = 0; t <= fadeDuration; t += Time.deltaTime)
         {
             float alpha = t / fadeDuration;
-            loadBackground.color = new Color(0, 0, 0, alpha);
+            loadBackground.color = new Color(0, 0, 0, alpha); // 黒フェード
             yield return null;
         }
     }

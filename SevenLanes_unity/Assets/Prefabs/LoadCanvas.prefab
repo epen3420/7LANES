@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadObj: {fileID: 2895465735649639093}
   loadBackground: {fileID: 2009356971456406424}
-  fadeDuration: 1.5
+  fadeDuration: 1
 --- !u!1 &5329857623895670294
 GameObject:
   m_ObjectHideFlags: 0
