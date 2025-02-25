@@ -39,7 +39,7 @@ public class EssenceGetScript : MonoBehaviour
             if (other.CompareTag($"Essence{i}")) // タグでアイテムを識別
             {
                 CollectItem(i);
-                soundScript.EssenceGetSE(i);
+                soundScript.EssenceGetSE(i);//取得SE再生する
                 Destroy(other.gameObject); // アイテムを取得後、消す
                 break;
             }
