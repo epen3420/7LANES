@@ -17,7 +17,7 @@ public class CharaMove : MonoBehaviour, IPlayerMovable
     private void Start()
     {
         // カメラの方向を向く
-        transform.LookAt(Camera.main.transform.position);
+       // transform.LookAt(Camera.main.transform.position);
     }
 
     private void Update()
