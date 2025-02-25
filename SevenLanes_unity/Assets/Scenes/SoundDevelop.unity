@@ -1246,7 +1246,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.71
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1423,17 +1423,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lane
       objectReference: {fileID: 0}
+    - target: {fileID: 5011853214892657384, guid: 6863f1296aced6540a837ad74f70bc64, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8d5ed8e104996544eb1957b9af18c3ad, type: 3}
+    - target: {fileID: 7891691568166905581, guid: 6863f1296aced6540a837ad74f70bc64, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5070571
+      objectReference: {fileID: 0}
     - target: {fileID: 7891691568166905581, guid: 6863f1296aced6540a837ad74f70bc64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7891691568166905581, guid: 6863f1296aced6540a837ad74f70bc64, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0.000005722
       objectReference: {fileID: 0}
     - target: {fileID: 7891691568166905581, guid: 6863f1296aced6540a837ad74f70bc64, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 100
+      value: 85.2
       objectReference: {fileID: 0}
     - target: {fileID: 7891691568166905581, guid: 6863f1296aced6540a837ad74f70bc64, type: 3}
       propertyPath: m_LocalRotation.w
