@@ -10,26 +10,40 @@ public class EssenceGetScript : MonoBehaviour
     public int MAX_RainbowArrow = 3;
     public bool canExpandLane = false;
 
+    private SoundScript soundScript;
+
 
     private int[] collectedEssence = new int[7]; // 7種類のアイテム、それぞれ最大4つまで
     public int RainbowArrowCount = 0;//虹の矢を数える
+    public int EssenceKindCount=7;//エッセンスの種類を数える
 
     [SerializeField]
     private TestTubeManager testTubeManager;
     [SerializeField]
     private RainbowArrowUIManager rainbowArrowUIManager;
 
+    private void Awake(){
+        soundScript = GetComponent<SoundScript>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+        EssenceKindCount=7;
+        for (int i = 0; i < 7; i++)
+        {
+            if(collectedEssence[i]==0)EssenceKindCount--;
+        }
+
         for (int i = 0; i < 7; i++)
         {
             if (other.CompareTag($"Essence{i}")) // タグでアイテムを識別
             {
                 CollectItem(i);
+                soundScript.EssenceGetSE(i);
                 Destroy(other.gameObject); // アイテムを取得後、消す
                 break;
             }
+
         }
     }
 
