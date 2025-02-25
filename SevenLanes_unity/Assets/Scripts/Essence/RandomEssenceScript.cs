@@ -4,9 +4,9 @@ public class RandomEssenceScript : MonoBehaviour
 {
     public GameObject[] itemPrefabs; // 7種類のアイテムプレハブ
     public float[] xPositions; // アイテムのX座標候補
-    public float yPos = 1.13f;
+    public float yPos = 0f;//エッセンスの高さ調節用関数
 
-    public float zDistanceThreshold = 50f; // 50m進むごとにアイテムを生成
+    public float zDistanceThreshold = 10f; // 50m進むごとにアイテムを生成
                                            // public int itemsPerSegment = 3; // 1回の生成で出現するアイテム数
 
     private float lastZPosition = 0f; // 最後にアイテムを生成したZ位置
