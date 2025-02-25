@@ -49,6 +49,7 @@ public class PlayerAnimationScript : MonoBehaviour
             // 直前のアニメーションの位置を保持してスムーズな遷移を行う
             anim.CrossFade("player_DrawaBow", 0.05f, 0, normalizedTime);
         }
+        else soundScript.NGDrawBowSE();
 
     }
 
