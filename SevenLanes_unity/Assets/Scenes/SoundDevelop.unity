@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence_Green (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4497238616621517246, guid: 153d209e6865d664488a000b42f624ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6004865061067949111, guid: 153d209e6865d664488a000b42f624ca, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25
@@ -362,6 +366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence_Orange (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1311314377360414218, guid: a78d7499cc83c374c9afbd4ceaa6c80d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2082711868411162965, guid: a78d7499cc83c374c9afbd4ceaa6c80d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25
@@ -507,6 +515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence_Red
       objectReference: {fileID: 0}
+    - target: {fileID: 8515572121977907203, guid: 62e889aef0cd20544aa418fbda074df8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -588,6 +600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence_Red (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8515572121977907203, guid: 62e889aef0cd20544aa418fbda074df8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -668,6 +684,10 @@ PrefabInstance:
     - target: {fileID: 3558269720940872667, guid: f6644b580481225449023154cbc81adf, type: 3}
       propertyPath: m_Name
       value: Essence_Yellow (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558269720940872667, guid: f6644b580481225449023154cbc81adf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -825,6 +845,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence_Yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 3558269720940872667, guid: f6644b580481225449023154cbc81adf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -932,6 +956,10 @@ PrefabInstance:
     - target: {fileID: 4124105279612834625, guid: dba339797f421a842ac235e4875fb92c, type: 3}
       propertyPath: m_Name
       value: Essence_Blue (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124105279612834625, guid: dba339797f421a842ac235e4875fb92c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6307074816250906303, guid: dba339797f421a842ac235e4875fb92c, type: 3}
       propertyPath: m_LocalScale.x
@@ -1243,10 +1271,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 88cf485e9bec20b4593c913ec3a8baab, type: 3}
+  m_Resource: {fileID: 8300000, guid: 88cf485e9bec20b4593c913ec3a8baab, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.71
+  m_Volume: 0.371
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1341,6 +1369,10 @@ PrefabInstance:
     - target: {fileID: 4421472837403016480, guid: ffb2c9b85d4e0a548b9d084aaec78c55, type: 3}
       propertyPath: m_Name
       value: Essence_Skyblue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421472837403016480, guid: ffb2c9b85d4e0a548b9d084aaec78c55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4947837503220972285, guid: ffb2c9b85d4e0a548b9d084aaec78c55, type: 3}
       propertyPath: m_LocalScale.x
@@ -1479,6 +1511,10 @@ PrefabInstance:
     - target: {fileID: 4497238616621517246, guid: 153d209e6865d664488a000b42f624ca, type: 3}
       propertyPath: m_Name
       value: Essence_Green (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497238616621517246, guid: 153d209e6865d664488a000b42f624ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6004865061067949111, guid: 153d209e6865d664488a000b42f624ca, type: 3}
       propertyPath: m_LocalScale.x
@@ -2190,6 +2226,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence_Violet (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2985417586582065775, guid: 5e4af78251d51734f85cb41657091799, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3844639173792919003, guid: 5e4af78251d51734f85cb41657091799, type: 3}
       propertyPath: m_Active
       value: 1
@@ -2593,6 +2633,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence_Red (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8515572121977907203, guid: 62e889aef0cd20544aa418fbda074df8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2609,6 +2653,10 @@ PrefabInstance:
     - target: {fileID: 4497238616621517246, guid: 153d209e6865d664488a000b42f624ca, type: 3}
       propertyPath: m_Name
       value: Essence_Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497238616621517246, guid: 153d209e6865d664488a000b42f624ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6004865061067949111, guid: 153d209e6865d664488a000b42f624ca, type: 3}
       propertyPath: m_LocalScale.x
@@ -2830,6 +2878,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence_Red (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8515572121977907203, guid: 62e889aef0cd20544aa418fbda074df8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2894,6 +2946,10 @@ PrefabInstance:
     - target: {fileID: 2985417586582065775, guid: 5e4af78251d51734f85cb41657091799, type: 3}
       propertyPath: m_Name
       value: Essence_Violet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2985417586582065775, guid: 5e4af78251d51734f85cb41657091799, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3844639173792919003, guid: 5e4af78251d51734f85cb41657091799, type: 3}
       propertyPath: m_Active
@@ -2975,6 +3031,10 @@ PrefabInstance:
     - target: {fileID: 2985417586582065775, guid: 5e4af78251d51734f85cb41657091799, type: 3}
       propertyPath: m_Name
       value: Essence_Violet
+      objectReference: {fileID: 0}
+    - target: {fileID: 2985417586582065775, guid: 5e4af78251d51734f85cb41657091799, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3844639173792919003, guid: 5e4af78251d51734f85cb41657091799, type: 3}
       propertyPath: m_Active
@@ -3148,6 +3208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence_Red (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8515572121977907203, guid: 62e889aef0cd20544aa418fbda074df8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3164,6 +3228,10 @@ PrefabInstance:
     - target: {fileID: 4421472837403016480, guid: ffb2c9b85d4e0a548b9d084aaec78c55, type: 3}
       propertyPath: m_Name
       value: Essence_Skyblue (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421472837403016480, guid: ffb2c9b85d4e0a548b9d084aaec78c55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4947837503220972285, guid: ffb2c9b85d4e0a548b9d084aaec78c55, type: 3}
       propertyPath: m_LocalScale.x
@@ -3592,6 +3660,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence_Blue (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4124105279612834625, guid: dba339797f421a842ac235e4875fb92c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6307074816250906303, guid: dba339797f421a842ac235e4875fb92c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25
@@ -3720,6 +3792,10 @@ PrefabInstance:
     - target: {fileID: 3558269720940872667, guid: f6644b580481225449023154cbc81adf, type: 3}
       propertyPath: m_Name
       value: Essence_Yellow (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558269720940872667, guid: f6644b580481225449023154cbc81adf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4260,6 +4336,10 @@ PrefabInstance:
     - target: {fileID: 4124105279612834625, guid: dba339797f421a842ac235e4875fb92c, type: 3}
       propertyPath: m_Name
       value: Essence_Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124105279612834625, guid: dba339797f421a842ac235e4875fb92c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6307074816250906303, guid: dba339797f421a842ac235e4875fb92c, type: 3}
       propertyPath: m_LocalScale.x
@@ -4890,6 +4970,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Essence_Skyblue (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4421472837403016480, guid: ffb2c9b85d4e0a548b9d084aaec78c55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4947837503220972285, guid: ffb2c9b85d4e0a548b9d084aaec78c55, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25
@@ -4970,6 +5054,10 @@ PrefabInstance:
     - target: {fileID: 1311314377360414218, guid: a78d7499cc83c374c9afbd4ceaa6c80d, type: 3}
       propertyPath: m_Name
       value: Essence_Orange (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311314377360414218, guid: a78d7499cc83c374c9afbd4ceaa6c80d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2082711868411162965, guid: a78d7499cc83c374c9afbd4ceaa6c80d, type: 3}
       propertyPath: m_LocalScale.x
@@ -5420,6 +5508,10 @@ PrefabInstance:
     - target: {fileID: 1311314377360414218, guid: a78d7499cc83c374c9afbd4ceaa6c80d, type: 3}
       propertyPath: m_Name
       value: Essence_Orange
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311314377360414218, guid: a78d7499cc83c374c9afbd4ceaa6c80d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2082711868411162965, guid: a78d7499cc83c374c9afbd4ceaa6c80d, type: 3}
       propertyPath: m_LocalScale.x
@@ -6392,6 +6484,8 @@ SceneRoots:
   - {fileID: 1283496294}
   - {fileID: 340229731}
   - {fileID: 467019940}
+  - {fileID: 1212419431}
+  - {fileID: 406517772}
   - {fileID: 212748997}
   - {fileID: 932884316}
   - {fileID: 1124006164}
@@ -6408,8 +6502,6 @@ SceneRoots:
   - {fileID: 39174}
   - {fileID: 333663679}
   - {fileID: 1022901686}
-  - {fileID: 406517772}
-  - {fileID: 1212419431}
   - {fileID: 426488977}
   - {fileID: 1803474551}
   - {fileID: 762298708}
