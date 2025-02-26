@@ -12,7 +12,7 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
                     "name": "PointerMove",
@@ -27,15 +27,6 @@
                     "name": "DrawBow",
                     "type": "Button",
                     "id": "da94ade2-c968-4613-a00f-929ce9bfa379",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "KeyCreateLane",
-                    "type": "Button",
-                    "id": "cdf2a1fc-ffb3-432f-84d1-e78fcc264381",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -155,23 +146,12 @@
                 },
                 {
                     "name": "",
-                    "id": "83e7517e-5b01-40d2-8751-90a88336b6e0",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "KeyCreateLane",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "617130a3-a39f-40ea-8741-b4e7fca17b80",
+                    "id": "7c1a4ab4-6a08-467d-ab8e-dd1a11a865ba",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "KeyCreateLane",
+                    "action": "DrawBow",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
