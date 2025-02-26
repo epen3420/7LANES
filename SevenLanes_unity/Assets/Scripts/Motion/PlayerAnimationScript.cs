@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+//アニメーションと付随するSEを再生するスクリプト
 public class PlayerAnimationScript : MonoBehaviour
 {
     private Animator anim;
@@ -46,6 +48,8 @@ public class PlayerAnimationScript : MonoBehaviour
         float normalizedTime = (float)frameCounter / (float)totalFrames;
         if (essenceGetScript.RainbowArrowCount > 0)
         {
+            soundScript.StartDrawingSE();
+            //soundScript.KeepDrawingSE();
             // 直前のアニメーションの位置を保持してスムーズな遷移を行う
             anim.CrossFade("player_DrawaBow", 0.05f, 0, normalizedTime);
         }
