@@ -122,11 +122,12 @@ GameObject:
   - component: {fileID: 297822725453670092}
   - component: {fileID: 958520036057370227}
   - component: {fileID: 3021550008255175752}
+  - component: {fileID: 245373616608771294}
   - component: {fileID: 2471902281039827159}
   - component: {fileID: 5427517517246311368}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,6 +347,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &245373616608771294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2678228287794834105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd10dcb18a06b8479aa89b52e5f6f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefabs:
+  - {fileID: 8515572121977907203, guid: 62e889aef0cd20544aa418fbda074df8, type: 3}
+  - {fileID: 1311314377360414218, guid: a78d7499cc83c374c9afbd4ceaa6c80d, type: 3}
+  - {fileID: 3558269720940872667, guid: f6644b580481225449023154cbc81adf, type: 3}
+  - {fileID: 4497238616621517246, guid: 153d209e6865d664488a000b42f624ca, type: 3}
+  - {fileID: 4421472837403016480, guid: ffb2c9b85d4e0a548b9d084aaec78c55, type: 3}
+  - {fileID: 4124105279612834625, guid: dba339797f421a842ac235e4875fb92c, type: 3}
+  - {fileID: 2985417586582065775, guid: 5e4af78251d51734f85cb41657091799, type: 3}
+  xPositions:
+  - -7.05
+  - -4.62
+  - -2.27
+  - 0
+  - 2.27
+  - 4.62
+  - 7.05
+  yPos: 0
+  zDistanceThreshold: 10
 --- !u!114 &2471902281039827159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,8 +397,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 70950a13819257840a607a572195f0db, type: 3}
   - {fileID: 8300000, guid: 0f9ff8ef0a2e8954280fbb3e1668ebd5, type: 3}
   - {fileID: 8300000, guid: 348339f4f6e7e2d4189d21e5ad2d6dd6, type: 3}
-  ShootingSound: {fileID: 8300000, guid: 6494e7e194e9bd0488c08b23a95a73b9, type: 3}
+  StartDrawingSound: {fileID: 8300000, guid: e60df5395eeaed8478df0ff3cbe2287f, type: 3}
+  ShootingSound: {fileID: 8300000, guid: eed3ef45f4ef9d44fa2aaf247418897a, type: 3}
   NGDrawSound: {fileID: 8300000, guid: e9b3e64fe1fb4df4da8ee7d25053f9fc, type: 3}
+  KeepDrawingSound: {fileID: 8300000, guid: ac0fab06046d2ad44ba20b9f2b3d47cb, type: 3}
+  loopStart: 0.779212
+  loopEnd: 1.4998
 --- !u!82 &5427517517246311368
 AudioSource:
   m_ObjectHideFlags: 0
@@ -383,7 +418,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

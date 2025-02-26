@@ -11,7 +11,7 @@ public class SoundScript : MonoBehaviour
     public AudioClip NGDrawSound;//矢がない状態で弓を引いたときの音
 
      public AudioClip KeepDrawingSound;//弓を引き続けるSE　ループ
-    public float loopStart =0.779f; // ループ開始時間（秒）
+    public float loopStart =0.779212f; // ループ開始時間（秒）
     public float loopEnd = 1.4998f;   // ループ終了時間（秒）
     private bool isLooping = false;
 

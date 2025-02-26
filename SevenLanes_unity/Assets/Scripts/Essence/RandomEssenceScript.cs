@@ -38,7 +38,7 @@ public class RandomEssenceScript : MonoBehaviour
         // ランダムなX座標を選択
         float xPos = xPositions[itemIndex];
 
-        // プレイヤーの進行位置を基準にZ軸方向へランダム配置
+        // プレイヤーの進行位置+50mを基準にZ軸方向へランダム配置
         float zPos = player.position.z + Random.Range(0f, zDistanceThreshold) + 50f;
 
         // アイテムを生成
