@@ -1181,7 +1181,7 @@ MonoBehaviour:
   MAX_Essence: 4
   MAX_RainbowArrow: 3
   canExpandLane: 0
-  RainbowArrowCount: 0
+  RainbowArrowCount: 500
   EssenceKindCount: 7
   testTubeManager: {fileID: 671843856}
   rainbowArrowUIManager: {fileID: 1982264066}
@@ -1204,7 +1204,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340229722}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1fba7718cdc54a4699549ea7434e707, type: 3}
   m_Name: 
@@ -1305,6 +1305,34 @@ Transform:
   - {fileID: 1283496294}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
+
+--- !u!114 &340229732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340229722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784a948edf45db54593e3083470ed61a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GetSound:
+  - {fileID: 8300000, guid: b366c86e2b5ded9439101b9956f9c4ce, type: 3}
+  - {fileID: 8300000, guid: 1e9b2234e2642154e89002ac395640a3, type: 3}
+  - {fileID: 8300000, guid: a3d12ae4d3396884d99aadbbce3bcf6f, type: 3}
+  - {fileID: 8300000, guid: 31d29266eae3a564badc06ea5e3f986c, type: 3}
+  - {fileID: 8300000, guid: 70950a13819257840a607a572195f0db, type: 3}
+  - {fileID: 8300000, guid: 0f9ff8ef0a2e8954280fbb3e1668ebd5, type: 3}
+  - {fileID: 8300000, guid: 348339f4f6e7e2d4189d21e5ad2d6dd6, type: 3}
+  StartDrawingSound: {fileID: 8300000, guid: e60df5395eeaed8478df0ff3cbe2287f, type: 3}
+  ShootingSound: {fileID: 8300000, guid: eed3ef45f4ef9d44fa2aaf247418897a, type: 3}
+  NGDrawSound: {fileID: 8300000, guid: e9b3e64fe1fb4df4da8ee7d25053f9fc, type: 3}
+  KeepDrawingSound: {fileID: 8300000, guid: ac0fab06046d2ad44ba20b9f2b3d47cb, type: 3}
+  loopStart: 0.779212
+  loopEnd: 1.4998
+
 --- !u!82 &340229733
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1315,8 +1343,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 88cf485e9bec20b4593c913ec3a8baab, type: 3}
-  m_Resource: {fileID: 8300000, guid: 88cf485e9bec20b4593c913ec3a8baab, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
