@@ -12,6 +12,14 @@ public class GameOverPlayer : MonoBehaviour
     private TestTubeManager testTubeManager;
 
 
+    private void Update()
+    {
+        if (transform.position.y < -15)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public IEnumerator GameOver(SpriteRenderer laneSpriteRenderer)
     {
         GetComponent<PlayerInputManager>().enabled = false;

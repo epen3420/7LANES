@@ -17,7 +17,7 @@ public class CharaMove : MonoBehaviour, IPlayerMovable
     private void Start()
     {
         // カメラの方向を向く
-       // transform.LookAt(Camera.main.transform.position);
+        // transform.LookAt(Camera.main.transform.position);
     }
 
     private void Update()
@@ -52,6 +52,8 @@ public class CharaMove : MonoBehaviour, IPlayerMovable
         Vector3 endPos = new Vector3(startPos.x + direction * lanesDistance, startPos.y, startPos.z);
         while (elapsedTime < SIDE_MOVE_DURATION)
         {
+            if (Mathf.Abs(endPos.x) > lanesDistance * 3)
+                break;
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / SIDE_MOVE_DURATION;
 
