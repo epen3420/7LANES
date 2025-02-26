@@ -49,7 +49,8 @@ public class PlayerAnimationScript : MonoBehaviour
         if (essenceGetScript.RainbowArrowCount > 0)
         {
             soundScript.StartDrawingSE();
-            //soundScript.KeepDrawingSE();
+            
+            soundScript.KeepDrawingSE();
             // 直前のアニメーションの位置を保持してスムーズな遷移を行う
             anim.CrossFade("player_DrawaBow", 0.05f, 0, normalizedTime);
         }
@@ -62,6 +63,7 @@ public class PlayerAnimationScript : MonoBehaviour
         float normalizedTime = (float)frameCounter / (float)totalFrames;
         if (essenceGetScript.RainbowArrowCount > 0)
         {
+            soundScript.StopKeepDrawingSE();
             soundScript.ShootingArrowSE();//矢を放つ音を再生する
             // 滑らかにアニメーションを切り替え
             anim.CrossFade("player_ShootArrow", 0.05f, 0, normalizedTime);
