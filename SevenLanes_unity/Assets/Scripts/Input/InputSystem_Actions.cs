@@ -34,7 +34,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""PointerMove"",
@@ -46,20 +46,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-
                     ""name"": ""DrawBow"",
                     ""type"": ""Button"",
                     ""id"": ""da94ade2-c968-4613-a00f-929ce9bfa379"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""KeyCreateLane"",
-                    ""type"": ""Button"",
-                    ""id"": ""cdf2a1fc-ffb3-432f-84d1-e78fcc264381"",
-
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -168,7 +157,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-
                     ""id"": ""2606af90-7079-4583-8283-b2adb22d2af8"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
@@ -180,25 +168,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""83e7517e-5b01-40d2-8751-90a88336b6e0"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""KeyCreateLane"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-
-                    ""id"": ""617130a3-a39f-40ea-8741-b4e7fca17b80"",
-
+                    ""id"": ""7c1a4ab4-6a08-467d-ab8e-dd1a11a865ba"",
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""KeyCreateLane"",
+                    ""action"": ""DrawBow"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -789,7 +764,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_KeyMove = m_Player.FindAction("KeyMove", throwIfNotFound: true);
         m_Player_PointerMove = m_Player.FindAction("PointerMove", throwIfNotFound: true);
         m_Player_DrawBow = m_Player.FindAction("DrawBow", throwIfNotFound: true);
-        m_Player_KeyCreateLane = m_Player.FindAction("KeyCreateLane", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -871,20 +845,14 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_KeyMove;
     private readonly InputAction m_Player_PointerMove;
-
     private readonly InputAction m_Player_DrawBow;
-
-    private readonly InputAction m_Player_KeyCreateLane;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
         public PlayerActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
         public InputAction @KeyMove => m_Wrapper.m_Player_KeyMove;
         public InputAction @PointerMove => m_Wrapper.m_Player_PointerMove;
-
         public InputAction @DrawBow => m_Wrapper.m_Player_DrawBow;
-
-        public InputAction @KeyCreateLane => m_Wrapper.m_Player_KeyCreateLane;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -900,14 +868,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @PointerMove.started += instance.OnPointerMove;
             @PointerMove.performed += instance.OnPointerMove;
             @PointerMove.canceled += instance.OnPointerMove;
-
             @DrawBow.started += instance.OnDrawBow;
             @DrawBow.performed += instance.OnDrawBow;
             @DrawBow.canceled += instance.OnDrawBow;
-
-            @KeyCreateLane.started += instance.OnKeyCreateLane;
-            @KeyCreateLane.performed += instance.OnKeyCreateLane;
-            @KeyCreateLane.canceled += instance.OnKeyCreateLane;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -918,14 +881,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @PointerMove.started -= instance.OnPointerMove;
             @PointerMove.performed -= instance.OnPointerMove;
             @PointerMove.canceled -= instance.OnPointerMove;
-
             @DrawBow.started -= instance.OnDrawBow;
             @DrawBow.performed -= instance.OnDrawBow;
             @DrawBow.canceled -= instance.OnDrawBow;
-
-            @KeyCreateLane.started -= instance.OnKeyCreateLane;
-            @KeyCreateLane.performed -= instance.OnKeyCreateLane;
-            @KeyCreateLane.canceled -= instance.OnKeyCreateLane;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1110,10 +1068,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     {
         void OnKeyMove(InputAction.CallbackContext context);
         void OnPointerMove(InputAction.CallbackContext context);
-
         void OnDrawBow(InputAction.CallbackContext context);
-
-        void OnKeyCreateLane(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

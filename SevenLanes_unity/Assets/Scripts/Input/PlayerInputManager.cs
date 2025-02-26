@@ -26,14 +26,14 @@ public class PlayerInputManager : MonoBehaviour
 
         inputActions.Player.KeyMove.performed += MoveSide;
         inputActions.Player.PointerMove.performed += MoveSide;
-        inputActions.Player.KeyCreateLane.canceled += ShootRainbowArrow;
+        inputActions.Player.DrawBow.canceled += ShootRainbowArrow;
     }
 
     private void OnDisable()
     {
         inputActions.Player.KeyMove.performed -= MoveSide;
         inputActions.Player.PointerMove.performed -= MoveSide;
-        inputActions.Player.KeyCreateLane.canceled -= ShootRainbowArrow;
+        inputActions.Player.DrawBow.canceled -= ShootRainbowArrow;
 
         inputActions.Disable();
     }
