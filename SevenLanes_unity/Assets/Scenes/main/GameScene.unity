@@ -402,7 +402,8 @@ PrefabInstance:
       objectReference: {fileID: 658852103}
     - target: {fileID: 3459202653424010781, guid: d2e79ab60561785468dd1f98b1c66baf, type: 3}
       propertyPath: RainbowArrowCount
-      value: 2
+
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5427517517246311368, guid: d2e79ab60561785468dd1f98b1c66baf, type: 3}
       propertyPath: Loop
