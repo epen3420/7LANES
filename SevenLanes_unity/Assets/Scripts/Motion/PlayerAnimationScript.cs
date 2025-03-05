@@ -55,10 +55,6 @@ public class PlayerAnimationScript : MonoBehaviour
         {
             bowArrowSEScript.NGDrawBowSE();
         }
-
-        else bowArrowSEScript.NGDrawBowSE();
-
-
     }
 
     public void StopDrawing()
