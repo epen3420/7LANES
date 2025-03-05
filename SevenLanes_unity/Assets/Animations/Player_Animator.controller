@@ -38,6 +38,9 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
+
+  - {fileID: -1968990700778034230}
+
   - {fileID: -3535133470942465192}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
@@ -89,7 +92,10 @@ AnimatorState:
   m_Name: player_DrawaBow
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions: []
+
+  m_Transitions:
+  - {fileID: -26546222010382580}
+
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -119,10 +125,10 @@ AnimatorStateMachine:
     m_Position: {x: 10, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3080863307491651743}
-    m_Position: {x: 10, y: 100, z: 0}
+    m_Position: {x: -10, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2652933767963296757}
-    m_Position: {x: 400, y: -70, z: 0}
+    m_Position: {x: 400, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8208962215041134501}
     m_Position: {x: 210, y: 0, z: 0}

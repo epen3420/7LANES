@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//弓と矢のSEのみを再生するスクリプト
 
-public class SoundScript : MonoBehaviour
+public class BowArrowSEScript : MonoBehaviour
 {
-    public AudioClip[] GetSound;//エッセンス取得時のSE
+
     public AudioClip StartDrawingSound;//弓を引き始めるときのSE　一回だけ鳴る
 
     public AudioClip ShootingSound;//矢を放つときのSE　矢が飛ぶSEではない
@@ -19,10 +20,6 @@ public class SoundScript : MonoBehaviour
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-    }
-    public void EssenceGetSE(int index)
-    {
-        audioSource.PlayOneShot(GetSound[index]);
     }
     public void StartDrawingSE()
     {
