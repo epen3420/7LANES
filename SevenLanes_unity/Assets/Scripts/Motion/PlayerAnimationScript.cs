@@ -23,7 +23,7 @@ public class PlayerAnimationScript : MonoBehaviour
         // Sキーが押されたときに弓を引く
         controls.Player.DrawBow.performed += ctx => StartDrawing();
         // Sキーが離されたときに弓を戻す
-        controls.Player.DrawBow.canceled += ctx => StopDrawing();
+        controls.Player.DrawBow.canceled += ctx => StopDrawing(ctx);
     }
 
     private void Update()
@@ -38,10 +38,12 @@ public class PlayerAnimationScript : MonoBehaviour
     private void OnEnable()
     {
         controls.Enable(); // Inputアクションを有効化
+        controls.Player.DrawBow.canceled += StopDrawing;
     }
 
     private void OnDisable()
     {
+        controls.Player.DrawBow.canceled -= StopDrawing;
         controls.Disable(); // Inputアクションを無効化
     }
 
@@ -66,7 +68,7 @@ public class PlayerAnimationScript : MonoBehaviour
         }
     }
 
-    private void StopDrawing()
+    private void StopDrawing(InputAction.CallbackContext ctx)
     {
         if (!isDrawing) return; // 弓を引いていない状態なら処理しない
 
