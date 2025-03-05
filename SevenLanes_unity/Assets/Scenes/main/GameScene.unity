@@ -377,6 +377,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2027149441363309292, guid: d2e79ab60561785468dd1f98b1c66baf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2027149441363309292, guid: d2e79ab60561785468dd1f98b1c66baf, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -396,9 +400,17 @@ PrefabInstance:
       propertyPath: testTubeManager
       value: 
       objectReference: {fileID: 658852103}
+    - target: {fileID: 3459202653424010781, guid: d2e79ab60561785468dd1f98b1c66baf, type: 3}
+      propertyPath: RainbowArrowCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5427517517246311368, guid: d2e79ab60561785468dd1f98b1c66baf, type: 3}
       propertyPath: Loop
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427517517246311368, guid: d2e79ab60561785468dd1f98b1c66baf, type: 3}
+      propertyPath: m_Volume
+      value: 0.395
       objectReference: {fileID: 0}
     - target: {fileID: 5427517517246311368, guid: d2e79ab60561785468dd1f98b1c66baf, type: 3}
       propertyPath: m_Resource
@@ -414,6 +426,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6755207912706945620, guid: d2e79ab60561785468dd1f98b1c66baf, type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755207912706945620, guid: d2e79ab60561785468dd1f98b1c66baf, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6755207912706945620, guid: d2e79ab60561785468dd1f98b1c66baf, type: 3}
@@ -470,6 +486,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8632147387226232201, guid: d2e79ab60561785468dd1f98b1c66baf, type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8632147387226232201, guid: d2e79ab60561785468dd1f98b1c66baf, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8632147387226232201, guid: d2e79ab60561785468dd1f98b1c66baf, type: 3}
@@ -1120,7 +1140,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 88cf485e9bec20b4593c913ec3a8baab, type: 3}
   m_Resource: {fileID: 8300000, guid: 88cf485e9bec20b4593c913ec3a8baab, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.772
   m_Pitch: 1
   Loop: 1
   Mute: 0

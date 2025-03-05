@@ -8,6 +8,8 @@ public class PlayerInputManager : MonoBehaviour
     private IPlayerMovable iPlayerMovable;
     private EssenceGetScript essenceGetScript;
     private InputSystem_Actions inputActions;
+    private PlayerAnimationScript playerAnimationScript;
+
     private float screenCenter;
 
 
@@ -16,6 +18,7 @@ public class PlayerInputManager : MonoBehaviour
         inputActions = new InputSystem_Actions();
         iPlayerMovable = GetComponent<IPlayerMovable>();
         essenceGetScript = GetComponent<EssenceGetScript>();
+        playerAnimationScript = GetComponent<PlayerAnimationScript>();
 
         screenCenter = Screen.width / 2;
     }
@@ -26,6 +29,7 @@ public class PlayerInputManager : MonoBehaviour
 
         inputActions.Player.KeyMove.performed += MoveSide;
         inputActions.Player.PointerMove.performed += MoveSide;
+        inputActions.Player.DrawBow.performed += StartDrawing;
         inputActions.Player.DrawBow.canceled += ShootRainbowArrow;
     }
 
@@ -33,6 +37,7 @@ public class PlayerInputManager : MonoBehaviour
     {
         inputActions.Player.KeyMove.performed -= MoveSide;
         inputActions.Player.PointerMove.performed -= MoveSide;
+        inputActions.Player.DrawBow.performed -= StartDrawing;
         inputActions.Player.DrawBow.canceled -= ShootRainbowArrow;
 
         inputActions.Disable();
@@ -67,9 +72,13 @@ public class PlayerInputManager : MonoBehaviour
     {
         return (int)Mathf.Sign(pos - screenCenter);
     }
-
+    private void StartDrawing(InputAction.CallbackContext context)
+    {
+        playerAnimationScript.StartDrawing();
+    }
     private void ShootRainbowArrow(InputAction.CallbackContext context)
     {
+        playerAnimationScript.StopDrawing();
         essenceGetScript.ReleaseRainbowArrow();
     }
 }
