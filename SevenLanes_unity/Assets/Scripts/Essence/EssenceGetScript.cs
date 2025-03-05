@@ -22,6 +22,7 @@ public class EssenceGetScript : MonoBehaviour
     [SerializeField]
     private RainbowArrowUIManager rainbowArrowUIManager;
 
+
     private void Awake()
     {
         GameObject seEssenceObject = GameObject.Find("SE_Essence");
@@ -90,6 +91,7 @@ public class EssenceGetScript : MonoBehaviour
         if (RainbowArrowCount > 0)
         {
             RainbowArrowCount--;
+
             rainbowArrowUIManager.HideRainbowArrow();
             Debug.Log($"現在の虹の矢の数は{RainbowArrowCount}");
 

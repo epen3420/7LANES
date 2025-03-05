@@ -15,7 +15,7 @@ public class LaneCreator : MonoBehaviour
         }
     }
 
-    private const float LANE_DISTANCE = 270.0f;
+    private const float LANE_DISTANCE = 265.0f;
     private Vector3 nextLanePos = new Vector3(0, 0, 100);
     private Quaternion laneRotate = Quaternion.Euler(90, 0, 0);
 
