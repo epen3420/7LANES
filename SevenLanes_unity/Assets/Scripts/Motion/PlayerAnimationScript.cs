@@ -21,8 +21,10 @@ public class PlayerAnimationScript : MonoBehaviour
     {
         anim = GetComponent<Animator>();
 
-        bowArrowSEScript = GetComponent<BowArrowSEScript>();
-        controls = new InputSystem_Actions(); // Input Systemのアクションマップを作成
+        GameObject seBAObject = GameObject.Find("SE_BowArrow");
+        bowArrowSEScript = seBAObject.GetComponent<BowArrowSEScript>();
+        // controls = new InputSystem_Actions(); // Input Systemのアクションマップを作成
+
 
         essenceGetScript = GetComponent<EssenceGetScript>();
 
@@ -40,17 +42,18 @@ public class PlayerAnimationScript : MonoBehaviour
         if (essenceGetScript.RainbowArrowCount > 0)
         {
 
+            //弓絞る音と引き続けるSEを再生
             bowArrowSEScript.StartDrawingSE();
-            
             bowArrowSEScript.KeepDrawingSE();
             // 直前のアニメーションの位置を保持してスムーズな遷移を行う
+            float normalizedTime = (float)frameCounter / (float)totalFrames;
 
             anim.CrossFade("player_DrawaBow", 0.05f, 0, normalizedTime);
             Debug.Log("Start Drawing: player_DrawaBow");
         }
         else
         {
-            soundScript.NGDrawBowSE();
+            bowArrowSEScript.NGDrawBowSE();
         }
 
         else bowArrowSEScript.NGDrawBowSE();
@@ -58,14 +61,12 @@ public class PlayerAnimationScript : MonoBehaviour
 
     }
 
-
-
-
     public void StopDrawing()
     {
         if (essenceGetScript.RainbowArrowCount > 0)
         {
 
+            float normalizedTime = (float)frameCounter / (float)totalFrames;
             bowArrowSEScript.StopKeepDrawingSE();
             bowArrowSEScript.ShootingArrowSE();//矢を放つ音を再生する
             // 滑らかにアニメーションを切り替え
