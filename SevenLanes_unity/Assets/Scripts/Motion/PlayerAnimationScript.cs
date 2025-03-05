@@ -2,21 +2,21 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-//アニメーションと付随するSEを再生するスクリプト
+//弓矢のアニメーションと付随する弓矢SEを再生するスクリプト
 public class PlayerAnimationScript : MonoBehaviour
 {
     private Animator anim;
     private InputSystem_Actions controls; // Input Systemのカスタムアクション
     private GameObject playerObject;
     private EssenceGetScript essenceGetScript;
-    private SoundScript soundScript;
+    private BowArrowSEScript bowArrowSEScript;
     private int frameCounter = 0;   //周期内における現在のフレーム
     private int totalFrames = 24;  // モーションの一周期のフレーム数
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        soundScript = GetComponent<SoundScript>();
+        bowArrowSEScript = GetComponent<BowArrowSEScript>();
         controls = new InputSystem_Actions(); // Input Systemのアクションマップを作成
         playerObject = GameObject.Find("Player");
 
@@ -48,13 +48,13 @@ public class PlayerAnimationScript : MonoBehaviour
         float normalizedTime = (float)frameCounter / (float)totalFrames;
         if (essenceGetScript.RainbowArrowCount > 0)
         {
-            soundScript.StartDrawingSE();
+            bowArrowSEScript.StartDrawingSE();
             
-            soundScript.KeepDrawingSE();
+            bowArrowSEScript.KeepDrawingSE();
             // 直前のアニメーションの位置を保持してスムーズな遷移を行う
             anim.CrossFade("player_DrawaBow", 0.05f, 0, normalizedTime);
         }
-        else soundScript.NGDrawBowSE();
+        else bowArrowSEScript.NGDrawBowSE();
 
     }
 
@@ -63,8 +63,8 @@ public class PlayerAnimationScript : MonoBehaviour
         float normalizedTime = (float)frameCounter / (float)totalFrames;
         if (essenceGetScript.RainbowArrowCount > 0)
         {
-            soundScript.StopKeepDrawingSE();
-            soundScript.ShootingArrowSE();//矢を放つ音を再生する
+            bowArrowSEScript.StopKeepDrawingSE();
+            bowArrowSEScript.ShootingArrowSE();//矢を放つ音を再生する
             // 滑らかにアニメーションを切り替え
             anim.CrossFade("player_ShootArrow", 0.05f, 0, normalizedTime);
         }
