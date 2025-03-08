@@ -32,7 +32,7 @@ public class GameOverPlayer : MonoBehaviour
         animator.enabled = false;
         yield return new WaitForSeconds(2.0f);
         animator.enabled = true;
-        animator.SetBool("IsGameOver", true);
+        animator.speed = 5.0f;
         yield return new WaitForSeconds(1.0f);
         laneSpriteRenderer.sortingLayerName = "Lane";
         charaMove.FallDown();
