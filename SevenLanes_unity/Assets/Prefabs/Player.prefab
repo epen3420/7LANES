@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lanesDistance: 2.25
-  forwardSpeed: 5
+  forwardSpeed: 10
 --- !u!114 &5615980502382232839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
   - 4.62
   - 7.05
   yPos: 0
-  zDistanceThreshold: 10
+  zDistanceThreshold: 11
 --- !u!1 &3521113998221400667
 GameObject:
   m_ObjectHideFlags: 0
