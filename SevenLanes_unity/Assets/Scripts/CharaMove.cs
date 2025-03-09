@@ -11,7 +11,7 @@ public class CharaMove : MonoBehaviour, IPlayerMovable
     private float lanesDistance = 2.0f;
     [Header("前進の速度")]
     [SerializeField]
-    private float forwardSpeed = 10.0f;
+    public float forwardSpeed = 10.0f;
 
 
     private void Start()
