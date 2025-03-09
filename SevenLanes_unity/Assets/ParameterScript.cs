@@ -18,7 +18,7 @@ public class ParameterScript : MonoBehaviour
     private CharaMove charaMove; // CharaMoveスクリプトへの参照
 
     private const float SIN30 = 0.536f; // sin30度の値
-    private float BGChangeInterval = 100f;//BGChangeを呼び出す間隔
+    private float BGChangeInterval = 300f;//BGChangeを呼び出す間隔
     private float nextDistanceThreshold; // 次にBGChangeを呼び出す閾値
     private int backgroundIndex = 1; // BGChangeのインデックス
 
