@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-// 背景キャンバスに付与
+//  背景キャンバスに付与
 // 複数の画像を不透明度を徐々に上げていく
 public class BGChangeScript : MonoBehaviour
 {
