@@ -276,6 +276,7 @@ MonoBehaviour:
   distanceText: {fileID: 2620242506382158394}
   altitudeText: {fileID: 3247238154948014907}
   speedText: {fileID: 4011553427029361152}
+  bgChangeScript: {fileID: 0}
 --- !u!1 &4713681507089421775
 GameObject:
   m_ObjectHideFlags: 0
