@@ -14,6 +14,7 @@ public class ParameterScript : MonoBehaviour
     private Vector3 startingPosition; // 開始位置
     private float distance; // 移動距離
     private float altitude; // 高度
+    private float speed; // 時速
 
     private CharaMove charaMove; // CharaMoveスクリプトへの参照
 
@@ -70,15 +71,16 @@ public class ParameterScript : MonoBehaviour
 
             // 高度を計算（距離 * sin30）
             altitude = distance * SIN30;
+            speed=(float)charaMove.forwardSpeed*3.6f;
 
             // Text UI にリアルタイムで反映
-            distanceText.text = $"Distance: {distance:F2} m";
-            altitudeText.text = $"Altitude: {altitude:F2} m";
+            distanceText.text = $"{((int)distance).ToString("D4")}";
+            altitudeText.text = $"{((int)altitude).ToString("D4")}";
 
             // **CharaMove の forwardSpeed をリアルタイム表示**
             if (charaMove != null)
             {
-                speedText.text = $"Speed: {charaMove.forwardSpeed:F2} m/s";
+                speedText.text =  $"{((int)speed).ToString("D4")}";
             }
 
             // **10m 進むごとに BGChange を呼び出す**
