@@ -21,7 +21,12 @@ public class LaneCreator : MonoBehaviour
 
     [SerializeField]
     private GameObject lanePrefab;
+    public int LaneCount { get; private set; } = 0;
 
+    private void Start()
+    {
+        LaneCount++;
+    }
 
     public void ExpandLane()
     {
@@ -29,5 +34,7 @@ public class LaneCreator : MonoBehaviour
         // レーン生成は不透明度を上げる感じで出すから修正する
         Instantiate(lanePrefab, nextLanePos, laneRotate);
         Debug.Log("レーンを延長しました");
+
+        LaneCount++;
     }
 }
