@@ -9,6 +9,7 @@ public class EssenceGetScript : MonoBehaviour
     public int MAX_Essence = 4;
     public int MAX_RainbowArrow = 3;
     public bool canExpandLane = false;
+    public int MAXEssenceKindCount=7;
 
     private EssenceSEScript essenceSEScript;
 
@@ -16,6 +17,7 @@ public class EssenceGetScript : MonoBehaviour
     private int[] collectedEssence = new int[7]; // 7種類のアイテム、それぞれ最大4つまで
     public int RainbowArrowCount = 0;//虹の矢を数える
     public int EssenceKindCount = 6;//エッセンスの種類を数える
+    
 
     [SerializeField]
     private TestTubeManager testTubeManager;
@@ -33,7 +35,7 @@ public class EssenceGetScript : MonoBehaviour
     {
 
 
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < MAXEssenceKindCount; i++)
         {
             if (other.CompareTag($"Essence{i}")) // タグでアイテムを識別
             {
@@ -60,7 +62,7 @@ public class EssenceGetScript : MonoBehaviour
             Debug.Log($"アイテム{itemIndex}はすでに最大数を持っています。");
         }
         EssenceKindCount = 6;
-        for (int k = 0; k < 7; k++)//エッセンスの取得種類に合わせて音階を上げる
+        for (int k = 0; k < MAXEssenceKindCount; k++)//エッセンスの取得種類に合わせて音階を上げる
         {
             if (collectedEssence[k] == 0) EssenceKindCount--;
         }
@@ -76,7 +78,7 @@ public class EssenceGetScript : MonoBehaviour
     {
         RainbowArrowCount++;
         rainbowArrowUIManager.ShowRainbowArrow();
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < MAXEssenceKindCount; i++)
         {
             collectedEssence[i]--;
             testTubeManager.RemoveEssenceFromTestTube(i);
