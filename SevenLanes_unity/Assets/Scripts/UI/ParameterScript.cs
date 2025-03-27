@@ -10,11 +10,12 @@ public class ParameterScript : MonoBehaviour
     public Text distanceText; // 距離を表示するText UI
     public Text altitudeText; // 高度を表示するText UI
     public Text speedText; // スピードを表示するText UI
+    public Text laneCountText; // 通過したレーン数を表示するText UI
 
     private Vector3 startingPosition; // 開始位置
     private float distance; // 移動距離
     private float altitude; // 高度
-        private float speed; // 時速
+    private float speed; // 時速
 
     private CharaMove charaMove; // CharaMoveスクリプトへの参照
 
@@ -59,7 +60,7 @@ public class ParameterScript : MonoBehaviour
 
         // 開始位置を保存
         startingPosition = player.position;
-        nextDistanceThreshold=BGChangeInterval;
+        nextDistanceThreshold = BGChangeInterval;
     }
 
     private void Update()
@@ -71,11 +72,13 @@ public class ParameterScript : MonoBehaviour
 
             // 高度を計算（距離 * sin30）
             altitude = distance * SIN30;
-            speed=(float)charaMove.forwardSpeed*3.6f;
+            speed = (float)charaMove.forwardSpeed * 3.6f;
 
             // Text UI にリアルタイムで反映
             distanceText.text = $" {(int)distance:D4} ";
             altitudeText.text = $"{(int)altitude:D4} ";
+
+            laneCountText.text = $"{LaneCreator.instance.LaneCount}";
 
             // **CharaMove の forwardSpeed をリアルタイム表示**
             if (charaMove != null)
@@ -98,9 +101,10 @@ public class ParameterScript : MonoBehaviour
         // インデックスが背景配列のサイズを超えないようにループ
         if (bgChangeScript != null)
         {
-            if(backgroundIndex<5){
-            Debug.Log($"BGChange を実行: Index = {backgroundIndex}");
-            bgChangeScript.ChangeBG(backgroundIndex);
+            if (backgroundIndex < 5)
+            {
+                Debug.Log($"BGChange を実行: Index = {backgroundIndex}");
+                bgChangeScript.ChangeBG(backgroundIndex);
             }
             backgroundIndex++;
         }
