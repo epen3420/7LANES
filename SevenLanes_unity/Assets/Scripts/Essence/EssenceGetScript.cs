@@ -97,11 +97,34 @@ public class EssenceGetScript : MonoBehaviour
             rainbowArrowUIManager.HideRainbowArrow();
             Debug.Log($"現在の虹の矢の数は{RainbowArrowCount}");
 
+            // 子オブジェクト"ArrowEffect"を探す
+            Transform arrowEffectTransform = transform.Find("ArrowEffect");
+            if (arrowEffectTransform != null)
+            {
+                Animator arrowEffectAnimator = arrowEffectTransform.GetComponent<Animator>();
+                if (arrowEffectAnimator != null)
+                {
+                    arrowEffectAnimator.SetTrigger("isEffectPlay");
+                    Debug.Log("ArrowEffectアニメーションのトリガーを起動");
+                }
+                else
+                {
+                    Debug.LogWarning("ArrowEffectにAnimatorコンポーネントが見つかりません");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("ArrowEffectが見つかりません");
+            }
+
+
             if (canExpandLane)
             {
                 LaneCreator.instance.ExpandLane();
                 canExpandLane = false;
             }
+
         }
     }
+
 }
