@@ -95,7 +95,7 @@ public class EssenceGetScript : MonoBehaviour
             RainbowArrowCount--;
 
             rainbowArrowUIManager.HideRainbowArrow();
-            Debug.Log($"現在の虹の矢の数は{RainbowArrowCount}");
+            //Debug.Log($"現在の虹の矢の数は{RainbowArrowCount}");
 
             // 子オブジェクト"ArrowEffect"を探す
             Transform arrowEffectTransform = transform.Find("ArrowEffect");
