@@ -49,7 +49,7 @@ public class PlayerAnimationScript : MonoBehaviour
             float normalizedTime = (float)frameCounter / (float)totalFrames;
 
             anim.CrossFade("player_DrawaBow", 0.05f, 0, normalizedTime);
-            Debug.Log("Start Drawing: player_DrawaBow");
+           // Debug.Log("Start Drawing: player_DrawaBow");
         }
         else
         {
@@ -68,7 +68,7 @@ public class PlayerAnimationScript : MonoBehaviour
             // 滑らかにアニメーションを切り替え
 
             anim.CrossFade("player_ShootArrow", 0.05f, 0, normalizedTime);
-            Debug.Log("Stop Drawing: player_ShootArrow");
+           // Debug.Log("Stop Drawing: player_ShootArrow");
         }
     }
 }
