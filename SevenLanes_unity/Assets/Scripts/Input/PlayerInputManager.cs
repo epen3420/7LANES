@@ -28,7 +28,7 @@ public class PlayerInputManager : MonoBehaviour
         inputActions.Enable();
 
         inputActions.Player.KeyMove.performed += MoveSide;
-        inputActions.Player.PointerMove.performed += MoveSide;
+        // inputActions.Player.PointerMove.performed += MoveSide;
         inputActions.Player.DrawBow.performed += StartDrawing;
         inputActions.Player.DrawBow.canceled += ShootRainbowArrow;
     }
@@ -36,7 +36,7 @@ public class PlayerInputManager : MonoBehaviour
     private void OnDisable()
     {
         inputActions.Player.KeyMove.performed -= MoveSide;
-        inputActions.Player.PointerMove.performed -= MoveSide;
+        // inputActions.Player.PointerMove.performed -= MoveSide;
         inputActions.Player.DrawBow.performed -= StartDrawing;
         inputActions.Player.DrawBow.canceled -= ShootRainbowArrow;
 
