@@ -3255,9 +3255,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1823654071096978646, guid: 6863f1296aced6540a837ad74f70bc64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3635632201727903776, guid: 6863f1296aced6540a837ad74f70bc64, type: 3}
       propertyPath: m_Name
       value: Lane
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341751085673859835, guid: 6863f1296aced6540a837ad74f70bc64, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7891691568166905581, guid: 6863f1296aced6540a837ad74f70bc64, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3298,6 +3306,10 @@ PrefabInstance:
     - target: {fileID: 7891691568166905581, guid: 6863f1296aced6540a837ad74f70bc64, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186811999363057487, guid: 6863f1296aced6540a837ad74f70bc64, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4315,7 +4327,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_TargetDisplay: 0
 --- !u!224 &2070144645
 RectTransform:
