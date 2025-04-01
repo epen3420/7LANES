@@ -1,5 +1,5 @@
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 // Parameterのキャンバスに付与
 // 自機のスピードを表示・移動距離を表示・高度を表示する
@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class ParameterScript : MonoBehaviour
 {
     public Transform player; // プレイヤーのTransform
-    public Text distanceText; // 距離を表示するText UI
-    public Text altitudeText; // 高度を表示するText UI
-    public Text speedText; // スピードを表示するText UI
-    public Text laneCountText; // 通過したレーン数を表示するText UI
+    public TMP_Text distanceText; // 距離を表示するText UI
+    public TMP_Text altitudeText; // 高度を表示するText UI
+    public TMP_Text speedText; // スピードを表示するText UI
+    public TMP_Text laneCountText; // 通過したレーン数を表示するText UI
 
     private Vector3 startingPosition; // 開始位置
     private float distance; // 移動距離
