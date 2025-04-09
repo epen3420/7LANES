@@ -9,15 +9,18 @@ public class EssenceGetScript : MonoBehaviour
     public int MAX_Essence = 4;
     public int MAX_RainbowArrow = 3;
     public bool canExpandLane = false;
-    public int MAXEssenceKindCount=7;
+    public int MAXEssenceKindCount = 7;
 
     private EssenceSEScript essenceSEScript;
+    public GameObject sparkEffectPrefab; // Spark時のエフェクト
+    public float rayDistance = 100f; // レイの長さ
+    public LayerMask hitLayers; // ヒットさせたいレイヤー（任意）
 
 
     private int[] collectedEssence = new int[7]; // 7種類のアイテム、それぞれ最大4つまで
     public int RainbowArrowCount = 0;//虹の矢を数える
     public int EssenceKindCount = 6;//エッセンスの種類を数える
-    
+
 
     [SerializeField]
     private TestTubeManager testTubeManager;
@@ -88,11 +91,32 @@ public class EssenceGetScript : MonoBehaviour
         // ここで新しいアイテムに変化する処理を書く
     }
 
+    private void SparkEffect()
+    {
+
+        Vector3 origin = new Vector3(transform.position.x, 1.0f, transform.position.z);
+        Vector3 direction = Vector3.forward;
+
+        // RayをSceneビューで確認
+        Debug.DrawRay(origin, direction * rayDistance, Color.red, 1.0f);
+
+        if (Physics.Raycast(origin, direction, out RaycastHit hit, rayDistance, hitLayers))
+        {
+            if (hit.collider.CompareTag("Spark"))
+            {
+                // ヒット時の処理（Sparkエフェクト生成など）
+                Instantiate(sparkEffectPrefab, hit.point, Quaternion.LookRotation(hit.normal));
+                Debug.Log("Sparkに命中！");
+            }
+        }
+    }
+
     public void ReleaseRainbowArrow()
     {
         if (RainbowArrowCount > 0)
         {
             RainbowArrowCount--;
+            SparkEffect();
 
             rainbowArrowUIManager.HideRainbowArrow();
             //Debug.Log($"現在の虹の矢の数は{RainbowArrowCount}");
@@ -116,7 +140,6 @@ public class EssenceGetScript : MonoBehaviour
             {
                 Debug.LogWarning("ArrowEffectが見つかりません");
             }
-
 
             if (canExpandLane)
             {

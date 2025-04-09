@@ -278,6 +278,11 @@ MonoBehaviour:
   MAX_RainbowArrow: 3
   canExpandLane: 0
   MAXEssenceKindCount: 7
+  sparkEffectPrefab: {fileID: 7522872552306606202, guid: dfb408526cd07a444a22817e1d2ad3d4, type: 3}
+  rayDistance: 200
+  hitLayers:
+    serializedVersion: 2
+    m_Bits: 128
   RainbowArrowCount: 0
   EssenceKindCount: 7
   testTubeManager: {fileID: 0}
