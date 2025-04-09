@@ -52,6 +52,14 @@ public class EssenceGetScript : MonoBehaviour
         }
     }
 
+    private void CheckEssence()
+    {
+        if (collectedEssence.All(count => count > 0) && RainbowArrowCount < MAX_RainbowArrow)
+        {
+            TransformItems();
+        }
+    }
+
     private void CollectItem(int itemIndex)
     {
         if (collectedEssence[itemIndex] < MAX_Essence)
@@ -71,10 +79,8 @@ public class EssenceGetScript : MonoBehaviour
         }
 
         // 各アイテムを最低1つ以上持っているかチェック
-        if (collectedEssence.All(count => count > 0) && RainbowArrowCount < MAX_RainbowArrow)
-        {
-            TransformItems();
-        }
+        CheckEssence();
+
     }
 
     private void TransformItems()
@@ -116,6 +122,9 @@ public class EssenceGetScript : MonoBehaviour
         if (RainbowArrowCount > 0)
         {
             RainbowArrowCount--;
+
+            // 各アイテムを最低1つ以上持っているかチェック
+
             SparkEffect();
 
             rainbowArrowUIManager.HideRainbowArrow();
@@ -146,6 +155,7 @@ public class EssenceGetScript : MonoBehaviour
                 LaneCreator.instance.ExpandLane();
                 canExpandLane = false;
             }
+            CheckEssence();
 
         }
     }
