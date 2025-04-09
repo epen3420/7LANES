@@ -14,6 +14,14 @@ public class InLaneChecker : MonoBehaviour
             return;
         }
 
+        // isMove を false にする
+        var background = FindObjectOfType<BackgroundScript>();
+        if (background != null)
+        {
+            background.isMove = false;
+            Debug.Log("背景停止（isMove = false）");
+        }
+
         var gameOverPlayer = other.GetComponent<GameOverPlayer>();
         StartCoroutine(gameOverPlayer.GameOver(transform.root.GetComponent<SpriteRenderer>()));
     }

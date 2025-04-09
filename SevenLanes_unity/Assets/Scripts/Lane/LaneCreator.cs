@@ -21,7 +21,7 @@ public class LaneCreator : MonoBehaviour
     [SerializeField]
     private GameObject lanePrefab;
     public int LaneCount { get; private set; } = 0;//現在の生成したレーンの数
-    float distance = 330f;
+    float distance = 160f;
     private void Start()
     {
         nextLanePos = transform.position;
@@ -46,7 +46,7 @@ public class LaneCreator : MonoBehaviour
         Debug.Log($"距離：{LengthFactor(LaneCount)}");
         Debug.Log($"生成位置：{nextLanePos.z}");
         GameObject lane = Instantiate(lanePrefab, nextLanePos, laneRotate);
-        lane.transform.localScale = new Vector3(1, 62.5f * LengthFactor(LaneCount), 1); // 62.5f初期のレーンの長さ
+        lane.transform.localScale = new Vector3(1, 30f * LengthFactor(LaneCount), 1); // 初期のレーンの長さ
         Debug.Log("レーンを延長しました");
 
 
@@ -56,9 +56,9 @@ public class LaneCreator : MonoBehaviour
             Renderer starRenderer = starTransform.GetComponent<Renderer>();
             if (starRenderer != null)
             {
-                // 元のタイリングに倍率を掛ける（例：Yだけ調整）
+                // 元のタイリングに倍率を掛ける（Yだけ調整）
                 Vector2 tiling = starRenderer.material.mainTextureScale;
-                tiling.y = 5.775f * LengthFactor(LaneCount + 1);
+                tiling.y = 2.8875f * LengthFactor(LaneCount + 1);
                 starRenderer.material.mainTextureScale = tiling;
             }
         }
