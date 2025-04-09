@@ -8,7 +8,9 @@ public class ParameterScript : MonoBehaviour
 {
     public Transform player; // プレイヤーのTransform
     public TMP_Text distanceText; // 距離を表示するText UI
+    public TMP_Text distanceUnitText; // 距離の単位を表示するText UI
     public TMP_Text altitudeText; // 高度を表示するText UI
+    public TMP_Text altitudeUnitText; // 高度の単位を表示するText UI
     public TMP_Text speedText; // スピードを表示するText UI
     public TMP_Text laneCountText; // 通過したレーン数を表示するText UI
 
@@ -74,9 +76,28 @@ public class ParameterScript : MonoBehaviour
             altitude = distance * SIN30;
             speed = (float)charaMove.forwardSpeed * 3.6f;
 
+            if (distance < 1000f)
+            {
+                distanceText.text = $" {(int)distance:D4} ";
+                distanceUnitText.text="m";
+            }
+            else
+            {
+                distanceText.text = $" {(int)distance / 1000:D4} ";
+                distanceUnitText.text="km";
+            }
             // Text UI にリアルタイムで反映
-            distanceText.text = $" {(int)distance:D4} ";
-            altitudeText.text = $"{(int)altitude:D4} ";
+            if (altitude < 1000f)
+            {
+                altitudeText.text = $"{(int)altitude:D4} ";
+                altitudeUnitText.text="m";
+            }
+            else
+            {
+                altitudeText.text = $"{(int)altitude / 1000:D4} ";
+                altitudeUnitText.text="km";
+            }
+
 
             laneCountText.text = $"{LaneCreator.instance.LaneCount}";
 
