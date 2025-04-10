@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class RandomEssenceScript : MonoBehaviour
 {
@@ -7,11 +8,13 @@ public class RandomEssenceScript : MonoBehaviour
 
     public float yPos = 0f;//エッセンスの高さ調節用関数
 
-    public float zDistanceThreshold = 10f; // 50m進むごとにアイテムを生成
+    public float zDistanceThreshold = 10f; // 進むごとにアイテムを生成
 
-                                           // public int itemsPerSegment = 3; // 1回の生成で出現するアイテム数
+    public List<GameObject> spawnedEssences = new List<GameObject>(); // 通り過ぎたEssence管理
+
 
     private float lastZPosition = 0f; // 最後にアイテムを生成したZ位置
+
     private int[] bias = new int[7];
 
     private Transform player; // プレイヤーのTransform
@@ -30,6 +33,8 @@ public class RandomEssenceScript : MonoBehaviour
             SpawnItems();
             lastZPosition = player.position.z; // 最後のZ位置を更新
         }
+        // 通り過ぎたエッセンスを非表示にする
+        CheckPassedEssences();
     }
 
     private void SpawnItems()
@@ -40,7 +45,7 @@ public class RandomEssenceScript : MonoBehaviour
         int BiasCount = 0;//0でないエッセンスの種類数をカウントする 値1〜7. 7のとき全部のエッセンスが出された
         int lastMissingItem = -1; // まだ出現していないアイテムのインデックス
 
-if(BiasCount==7){for(int i = 0; i < 7; i++)bias[i]--;}
+        if (BiasCount == 7) { for (int i = 0; i < 7; i++) bias[i]--; }
         // 現在出現しているアイテムの数をカウントし、未出現のアイテムを記録
         for (int i = 0; i < 7; i++)
         {
@@ -53,7 +58,7 @@ if(BiasCount==7){for(int i = 0; i < 7; i++)bias[i]--;}
         {
             // 6種類が出現済みの場合、まだ出ていない7種類目を強制生成
             itemIndex = lastMissingItem;
-            
+
         }
         else
         {
@@ -62,20 +67,41 @@ if(BiasCount==7){for(int i = 0; i < 7; i++)bias[i]--;}
         }
 
         bias[itemIndex]++; // 選ばれたアイテムのカウントを増やす
-        
-                           // ランダムなX座標を選択
+
+        // ランダムなX座標を選択
         float xPos = xPositions[itemIndex];
 
         // プレイヤーの進行位置+50mを基準にZ軸方向へランダム配置
-
-
-
-
         float zPos = player.position.z + Random.Range(0f, zDistanceThreshold) + 50f;
 
         // アイテムを生成
         Vector3 spawnPosition = new Vector3(xPos, yPos, zPos);
-        Instantiate(itemPrefabs[itemIndex], spawnPosition, Quaternion.identity);
-        //  }
+        GameObject newEssence = Instantiate(itemPrefabs[itemIndex], spawnPosition, Quaternion.identity);
+
+        //リストに追加 
+        spawnedEssences.Add(newEssence);
+    }
+    private void CheckPassedEssences()
+    {
+        float playerZ = player.position.z;
+
+        foreach (GameObject essence in spawnedEssences)
+        {
+            if (essence != null && essence.activeSelf && essence.transform.position.z < playerZ - 3.5f)
+            {
+                // すでにフェード開始済みでなければ
+                var fade = essence.GetComponent<FadeAndDeactivate>();
+                if (fade != null)
+                {
+                    fade.StartFadeOut();
+                    Debug.Log("通り過ぎたEssenceをフェードアウトしました");
+                }
+                else
+                {
+                    // 安全策として SetActive(false)（フェードスクリプトがない場合）
+                    essence.SetActive(false);
+                }
+            }
+        }
     }
 }

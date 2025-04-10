@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4612883616082714032}
   - component: {fileID: 7424889426252060682}
   - component: {fileID: 3844639173792919003}
+  - component: {fileID: 6803357281213703731}
   m_Layer: 0
   m_Name: Essence_Violet
   m_TagString: Essence6
@@ -130,3 +131,16 @@ LookAtConstraint:
   m_Sources:
   - sourceTransform: {fileID: 0}
     weight: 1
+--- !u!114 &6803357281213703731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985417586582065775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e8f4743ea5e2c439924b672637239b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 0.5

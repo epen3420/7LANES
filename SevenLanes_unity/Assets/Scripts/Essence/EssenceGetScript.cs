@@ -20,6 +20,7 @@ public class EssenceGetScript : MonoBehaviour
     private int[] collectedEssence = new int[7]; // 7種類のアイテム、それぞれ最大4つまで
     public int RainbowArrowCount = 0;//虹の矢を数える
     public int EssenceKindCount = 6;//エッセンスの種類を数える
+    
 
 
     [SerializeField]
