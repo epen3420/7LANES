@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 5801433369570433715}
   - component: {fileID: 7091709749687336573}
   - component: {fileID: 7397746234353245989}
+  - component: {fileID: 7229994758628032719}
   m_Layer: 0
   m_Name: Star
   m_TagString: Untagged
@@ -296,6 +297,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &7229994758628032719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823654071096978646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29708263ebdfe0e4fb9206976dd86c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2190237678460585086
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35325443fe541ba43901fae45bf01f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeDuration: 1
   lanePrefab: {fileID: 3635632201727903776}
 --- !u!1 &8186811999363057487
 GameObject:
@@ -587,8 +601,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4230351367653785104}
   - component: {fileID: 5341751085673859835}
+  - component: {fileID: 8184961435131159673}
   m_Layer: 0
-  m_Name: kari stage
+  m_Name: NormalStage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -654,7 +669,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 656c5a1bf5335c34aa07ab4ca0b2472f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -664,3 +679,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8184961435131159673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186811999363057487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b935a10dadea97d4eb0b2db649047d53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
