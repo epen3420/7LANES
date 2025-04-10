@@ -94,7 +94,7 @@ public class RandomEssenceScript : MonoBehaviour
                 if (fade != null)
                 {
                     fade.StartFadeOut();
-                    Debug.Log("通り過ぎたEssenceをフェードアウトしました");
+                   // Debug.Log("通り過ぎたEssenceをフェードアウトしました");
                 }
                 else
                 {

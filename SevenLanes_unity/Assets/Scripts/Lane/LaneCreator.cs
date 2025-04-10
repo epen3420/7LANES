@@ -3,6 +3,7 @@ using UnityEngine;
 public class LaneCreator : MonoBehaviour
 {
     public static LaneCreator instance;
+        public float fadeDuration = 0.5f;
     private void Awake()
     {
         if (instance == null)
@@ -62,8 +63,23 @@ public class LaneCreator : MonoBehaviour
                 starRenderer.material.mainTextureScale = tiling;
             }
         }
+
+
+        //フェードイン開始（透明から徐々に表示）
+        StarFader fader = starTransform.GetComponent<StarFader>();
+        if (fader != null)
+        {
+            fader.FadeIn(fadeDuration);
+            
+        }
+        Transform NStageTransform = lane.transform.Find("NormalStage");
+        StageFader stagefader = NStageTransform.GetComponent<StageFader>();
+        if (stagefader!= null)
+        {
+            stagefader.FadeIn(fadeDuration);
+            Debug.Log("レーンをフェードしました");
+        }
+
+
     }
-
-
-
 }
