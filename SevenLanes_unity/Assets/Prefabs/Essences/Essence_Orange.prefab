@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6439508112577669605}
   - component: {fileID: 867760710634231433}
   - component: {fileID: 6509689392896072811}
+  - component: {fileID: 2228089888701438737}
   m_Layer: 0
   m_Name: Essence_Orange
   m_TagString: Essence1
@@ -130,3 +131,16 @@ LookAtConstraint:
   m_Sources:
   - sourceTransform: {fileID: 0}
     weight: 1
+--- !u!114 &2228089888701438737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311314377360414218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e8f4743ea5e2c439924b672637239b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 0.5
